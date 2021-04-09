@@ -104,24 +104,35 @@
 
     <owl:Class rdf:about="http://purl.org/MMO#Carte">
         <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/MMO#EstProduitPar"/>
-                <owl:someValuesFrom rdf:resource="http://purl.org/MMO#Cartographie"/>
-            </owl:Restriction>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/MMO#Production"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/MMO#EstProduitPar"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/MMO#Cartographie"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/MMO#EstProduitPar"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.org/MMO#Cartographie"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.org/MMO#Production"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/MMO#EstProduitPar"/>
-                <owl:someValuesFrom rdf:resource="http://purl.org/MMO#Cartographie"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/MMO#EstProduitPar"/>
-                <owl:allValuesFrom rdf:resource="http://purl.org/MMO#Cartographie"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.org/MMO#CarteEuclidienne"/>
+            <rdf:Description rdf:about="http://purl.org/MMO#CarteMentale"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/MMO#CarteEuclidienne -->
+
+    <owl:Class rdf:about="http://purl.org/MMO#CarteEuclidienne">
+        <rdfs:subClassOf rdf:resource="http://purl.org/MMO#Carte"/>
+        <rdfs:comment>Terme repris des travaux d&apos;Élise Olmédo
+
+NB : à changer. Les cartes &quot;eulidiennes&quot; peuvent utiliser une représentation non euclidienne de l&apos;espace</rdfs:comment>
     </owl:Class>
     
 
@@ -315,8 +326,20 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/MMO#EstUtiliséPourProduirePar"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/MMO#Segmentation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/MMO#EstProduitPar"/>
                 <owl:allValuesFrom rdf:resource="http://purl.org/MMO#Externalisation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/MMO#EstUtiliséPourProduirePar"/>
+                <owl:allValuesFrom rdf:resource="http://purl.org/MMO#Segmentation"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -379,20 +402,8 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/MMO#ProduitAPartirDe"/>
-                <owl:someValuesFrom rdf:resource="http://purl.org/MMO#RSE"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/MMO#Produit"/>
                 <owl:allValuesFrom rdf:resource="http://purl.org/MMO#Géon"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/MMO#ProduitAPartirDe"/>
-                <owl:allValuesFrom rdf:resource="http://purl.org/MMO#RSE"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -402,6 +413,109 @@
     <!-- http://purl.org/MMO#Union -->
 
     <owl:Class rdf:about="http://purl.org/MMO#Union"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/MMO#Carte_bb11 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/MMO#Carte_bb11">
+        <rdf:type rdf:resource="http://purl.org/MMO#Carte"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/MMO#Segmentation -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/MMO#Segmentation">
+        <rdf:type rdf:resource="http://purl.org/MMO#Segmentation"/>
+        <Produit rdf:resource="http://purl.org/MMO#géon_1"/>
+        <ProduitAPartirDe rdf:resource="http://purl.org/MMO#Carte_bb11"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/MMO#Segmentation_2 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/MMO#Segmentation_2">
+        <rdf:type rdf:resource="http://purl.org/MMO#Segmentation"/>
+        <Produit rdf:resource="http://purl.org/MMO#géon_4"/>
+        <ProduitAPartirDe rdf:resource="http://purl.org/MMO#Carte_bb11"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/MMO#géon_1 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/MMO#géon_1">
+        <EstProduitPar rdf:resource="http://purl.org/MMO#Segmentation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/MMO#géon_2 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/MMO#géon_2">
+        <EstProduitPar rdf:resource="http://purl.org/MMO#Segmentation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/MMO#géon_3 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/MMO#géon_3">
+        <EstProduitPar rdf:resource="http://purl.org/MMO#Segmentation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/MMO#géon_4 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/MMO#géon_4"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.org/MMO#Processus"/>
+            <rdf:Description rdf:about="http://purl.org/MMO#Production"/>
+            <rdf:Description rdf:about="http://purl.org/MMO#Signifiant"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.org/MMO#Segmentation"/>
+            <rdf:Description rdf:about="http://purl.org/MMO#Segmentation_2"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.org/MMO#géon_1"/>
+            <rdf:Description rdf:about="http://purl.org/MMO#géon_2"/>
+            <rdf:Description rdf:about="http://purl.org/MMO#géon_3"/>
+        </owl:distinctMembers>
+    </rdf:Description>
 </rdf:RDF>
 
 
