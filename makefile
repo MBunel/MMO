@@ -71,7 +71,7 @@ $(TEMP_FOLDER)/_$(MMO)_annotated.owl: $(TEMP_FOLDER)/_$(MMO)_reasoned.owl | $(TE
 	$(ROBOT) annotate --input $< \
 		--ontology-iri $(MMO_IRI) \
 		--version-iri $(MMO_IRI)/$(MMO_VERSION) \
-		--annotation rdfs:comment "MMO" \
+		--annotation rdfs:comment "$(shell cat $(TEMP_FOLDER)/_$(MMO)_doc.txt)" \
 		--annotation rdfs:label "Label" \
 		--annotation dc:modified $(shell date -I) \
 		--output $@
@@ -81,7 +81,7 @@ $(TEMP_FOLDER)/_$(MMV)_annotated.owl: $(TEMP_FOLDER)/_$(MMV)_extracted.owl | $(T
 	$(ROBOT) annotate --input $< \
 		--ontology-iri $(MMV_IRI) \
 		--version-iri $(MMV_IRI)/$(MMV_VERSION) \
-		--annotation rdfs:comment "MMV" \
+		--annotation rdfs:comment "$(shell cat $(TEMP_FOLDER)/_$(MMV)_doc.txt)" \
 		--annotation rdfs:label "Label" \
 		--annotation dc:modified $(shell date -I) \
 		--output $@
