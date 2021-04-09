@@ -1,0 +1,2 @@
+http://purl.org/MMO#Géon
+http://purl.org/MMO#Carte

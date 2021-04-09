@@ -1,0 +1,41 @@
+#+TITLE: Mental Maps Ontology (MMO)
+
+L'ontologie des cartes mentales (MMO) a été construite dans le but de permettre la description de cartes mentales.
+
+* Structure
+
+L'ontologie est subdivisée en plusieurs fichiers qu'il est nécessaire de fusioner
+
+** MMO_HEADER
+
+Ce fichier contient l'ensemble des méta-données de l'ontologie
+
+** MMO_Dénotation
+
+Dans ce fichier est décrite la
+
+** MMO_CARTE
+
+Cette partie décrit le vocabulaire des cartes mentales.
+
+NB : Si le travail est bien fait ce fichier peut constituer un vocabulaire indépendant
+
+** MMO_PROCESSUS
+
+Décrit les processus de restitution
+
+* Description des produits
+
+** MMO
+   :PROPERTIES:
+   :ID:       3877ff17-23f1-488e-9b10-57dea2b70af9
+   :END:
+
+MMO est l'ontologie des cartes mentales
+
+** MMV
+   :PROPERTIES:
+   :ID:       2812eeff-8868-4ed2-afc9-0b79d8bf78ef
+   :END:
+
+MMV est un sous ensemble de MMO
