@@ -36,12 +36,13 @@ all: directories $(BUILD_FOLDER)/$(MMO).owl $(BUILD_FOLDER)/$(MMV).owl
 directories: $(BUILD_FOLDER) $(TEMP_FOLDER)
 
 $(BUILD_FOLDER) $(TEMP_FOLDER):
-	mkdir -p $@
+	@echo "Creation of $@ folder"
+	@mkdir -p $@
 
 # Fusion des différentes composantes
-
 $(TEMP_FOLDER)/_components_merged.owl: $(OWL_FILES)
-	$(ROBOT) merge $(addprefix --input , $(OWL_FILES)) --output $@
+	@echo "Merging $(OWL_FILES)"
+	@$(ROBOT) merge $(addprefix --input , $(OWL_FILES)) --output $@
 
 # Anotation de l'ontologie temporaire (seules les annotations
 # générales doivent être mise
@@ -52,24 +53,29 @@ $(TEMP_FOLDER)/_components_merged.owl: $(OWL_FILES)
 # Extraction de MMV à partir de l'ontologie temporaire
 
 $(TEMP_FOLDER)/_$(MMV)_extracted.owl: $(TEMP_FOLDER)/_components_merged.owl
-	$(ROBOT) extract --method bot --input $< --term-file $(SRC_FOLDER)/$(MMV_TERMS) --output $@
+	@echo "Extraction of $(MMV)"
+	@$(ROBOT) extract --method bot --input $< --term-file $(SRC_FOLDER)/$(MMV_TERMS) --output $@
 
 # Création des axiomes de MMO par résonement
 $(TEMP_FOLDER)/_$(MMO)_reasoned.owl: $(TEMP_FOLDER)/_components_merged.owl
-	$(ROBOT) reason -i $< -r HERMIT -o $@
+	@echo "Reasoning on $(MMO)"
+	@$(ROBOT) reason -i $< -r HERMIT -o $@
 
 # Extrait la documentation de MMO du readme
 $(TEMP_FOLDER)/_$(MMO)_doc.txt:
-	$(EMACS) readme.org --eval '(progn (org-id-goto "3877ff17-23f1-488e-9b10-57dea2b70af9") (org-ascii-export-as-ascii nil t) (write-file "$@"))'
+	@echo "Extraction of $(MMO) documentation"
+	@$(EMACS) readme.org --eval '(progn (org-id-goto "3877ff17-23f1-488e-9b10-57dea2b70af9") (org-ascii-export-as-ascii nil t) (write-file "$@"))'
 
 # Extrait la documentation de MMV du readme
 $(TEMP_FOLDER)/_$(MMV)_doc.txt:
-	$(EMACS) readme.org --eval '(progn (org-id-goto "2812eeff-8868-4ed2-afc9-0b79d8bf78ef") (org-ascii-export-as-ascii nil t) (write-file "$@"))'
+	@echo "Extraction of $(MMV) documentation"
+	@$(EMACS) readme.org --eval '(progn (org-id-goto "2812eeff-8868-4ed2-afc9-0b79d8bf78ef") (org-ascii-export-as-ascii nil t) (write-file "$@"))'
 
 
 # Annotation ontologies
 $(TEMP_FOLDER)/_$(MMO)_annotated.owl: $(TEMP_FOLDER)/_$(MMO)_reasoned.owl | $(TEMP_FOLDER)/_$(MMO)_doc.txt
-	$(ROBOT) annotate --input $< \
+	@echo "Annotation of $(MMO)"
+	@$(ROBOT) annotate --input $< \
 		--ontology-iri $(MMO_IRI) \
 		--version-iri $(MMO_IRI)/$(MMO_VERSION) \
 		--annotation rdfs:comment "$(shell cat $(TEMP_FOLDER)/_$(MMO)_doc.txt)" \
@@ -79,7 +85,8 @@ $(TEMP_FOLDER)/_$(MMO)_annotated.owl: $(TEMP_FOLDER)/_$(MMO)_reasoned.owl | $(TE
 
 
 $(TEMP_FOLDER)/_$(MMV)_annotated.owl: $(TEMP_FOLDER)/_$(MMV)_extracted.owl | $(TEMP_FOLDER)/_$(MMV)_doc.txt
-	$(ROBOT) annotate --input $< \
+	@echo "Annotation of $(MMV)"
+	@$(ROBOT) annotate --input $< \
 		--ontology-iri $(MMV_IRI) \
 		--version-iri $(MMV_IRI)/$(MMV_VERSION) \
 		--annotation rdfs:comment "$(shell cat $(TEMP_FOLDER)/_$(MMV)_doc.txt)" \
@@ -91,21 +98,28 @@ $(TEMP_FOLDER)/_$(MMV)_annotated.owl: $(TEMP_FOLDER)/_$(MMV)_extracted.owl | $(T
 # Création des versions finales MMO et MMV
 # Version finale de MMO
 $(BUILD_FOLDER)/$(MMO).owl: $(TEMP_FOLDER)/_$(MMO)_annotated.owl
-	cp $< $@
+	@echo "Creation of $(MMO).owl"
+	@cp $< $@
 
 # Version finale de MMV
 $(BUILD_FOLDER)/$(MMV).owl: $(TEMP_FOLDER)/_$(MMV)_annotated.owl
-	cp $< $@
+	@echo "Creation of $(MMV).owl"
+	@cp $< $@
 
 # Régle pour la création de l'ontologie
 tests: $(BUILD_FOLDER)/$(MMO).owl
-	$(ROBOT) verify --input $< --queries $(SPARQL_QUERIES_TEST)
+	@echo "Verification of $(MMO).owl"
+	@$(ROBOT) verify --input $< --queries $(SPARQL_QUERIES_TEST)
 
 evaluation: $(BUILD_FOLDER)/$(MMO).owl
-	$(ROBOT) report --input $< --output evaluation_report.html
+	@echo "Evaluation of $(MMO).owl"
+	@$(ROBOT) report --input $< --output evaluation_report.html
 
 clean:
-	rm -r $(BUILD_FOLDER)
+	@echo "Removing $(TEMP_FOLDER) folder"
+	@rm -r $(TEMP_FOLDER)
 
 mrproper: clean
-	rm -r $(TEMP_FOLDER)
+	@echo "Removing $(BUILD_FOLDER) folder"
+	@rm -r $(BUILD_FOLDER)
+
