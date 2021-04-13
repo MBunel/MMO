@@ -231,9 +231,15 @@ NB : à changer. Les cartes &quot;eulidiennes&quot; peuvent utiliser une représ
     
 
 
-    <!-- http://purl.org/MMO#Géon -->
+    <!-- http://purl.org/MMO#ObjetSpatial -->
 
-    <owl:Class rdf:about="http://purl.org/MMO#Géon">
+    <owl:Class rdf:about="http://purl.org/MMO#ObjetSpatial"/>
+    
+
+
+    <!-- http://purl.org/MMO#Objet_géographique -->
+
+    <owl:Class rdf:about="http://purl.org/MMO#Objet_géographique">
         <owl:equivalentClass>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/MMO#EstProduitPar"/>
@@ -254,12 +260,6 @@ NB : à changer. Les cartes &quot;eulidiennes&quot; peuvent utiliser une représ
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
-    
-
-
-    <!-- http://purl.org/MMO#ObjetSpatial -->
-
-    <owl:Class rdf:about="http://purl.org/MMO#ObjetSpatial"/>
     
 
 
@@ -390,20 +390,20 @@ NB : à changer. Les cartes &quot;eulidiennes&quot; peuvent utiliser une représ
         <owl:equivalentClass>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/MMO#Produit"/>
-                <owl:someValuesFrom rdf:resource="http://purl.org/MMO#Géon"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/MMO#Objet_géographique"/>
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.org/MMO#Processus"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/MMO#Produit"/>
-                <owl:someValuesFrom rdf:resource="http://purl.org/MMO#Géon"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/MMO#Objet_géographique"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/MMO#Produit"/>
-                <owl:allValuesFrom rdf:resource="http://purl.org/MMO#Géon"/>
+                <owl:allValuesFrom rdf:resource="http://purl.org/MMO#Objet_géographique"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>

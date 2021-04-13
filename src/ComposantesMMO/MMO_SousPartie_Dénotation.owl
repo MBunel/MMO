@@ -69,7 +69,7 @@
         <owl:inverseOf rdf:resource="http://purl.org/MMO#GéonDénotéPar"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
-        <rdfs:range rdf:resource="http://purl.org/MMO#Géon"/>
+        <rdfs:range rdf:resource="http://purl.org/MMO#Objet_géographique"/>
     </owl:ObjectProperty>
     
 
@@ -141,16 +141,6 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
     
 
 
-    <!-- http://purl.org/MMO#Géon -->
-
-    <owl:Class rdf:about="http://purl.org/MMO#Géon">
-        <rdfs:subClassOf rdf:resource="http://purl.org/MMO#ObjetSpatial"/>
-        <rdfs:subClassOf rdf:resource="http://purl.org/MMO#Signifié"/>
-        <rdfs:comment>Tout objet spatial qui existe dans la réalité. Il est donc distinct des Figurés cartographiques et des Objets Base donneé</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- http://purl.org/MMO#ObjetBaseDonnée -->
 
     <owl:Class rdf:about="http://purl.org/MMO#ObjetBaseDonnée">
@@ -166,10 +156,20 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
     <owl:Class rdf:about="http://purl.org/MMO#ObjetSpatial">
         <owl:disjointUnionOf rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.org/MMO#FiguréCartographique"/>
-            <rdf:Description rdf:about="http://purl.org/MMO#Géon"/>
             <rdf:Description rdf:about="http://purl.org/MMO#ObjetBaseDonnée"/>
+            <rdf:Description rdf:about="http://purl.org/MMO#Objet_géographique"/>
         </owl:disjointUnionOf>
         <rdfs:comment>Cette classe défini n&apos;importe quel type d&apos;objet pouvant avoir une position. Il peut aussi bien s&apos;agir d&apos;objets imaginaires, que de dessins (qui ont une position dans l&apos;espace de la feuille), de données géographique ou d&apos;objets réels.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/MMO#Objet_géographique -->
+
+    <owl:Class rdf:about="http://purl.org/MMO#Objet_géographique">
+        <rdfs:subClassOf rdf:resource="http://purl.org/MMO#ObjetSpatial"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/MMO#Signifié"/>
+        <rdfs:comment>Tout objet spatial qui existe dans la réalité. Il est donc distinct des Figurés cartographiques et des Objets Base donneé</rdfs:comment>
     </owl:Class>
     
 
@@ -519,8 +519,8 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.org/MMO#FiguréCartographique"/>
-            <rdf:Description rdf:about="http://purl.org/MMO#Géon"/>
             <rdf:Description rdf:about="http://purl.org/MMO#ObjetBaseDonnée"/>
+            <rdf:Description rdf:about="http://purl.org/MMO#Objet_géographique"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
