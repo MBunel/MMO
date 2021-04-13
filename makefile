@@ -10,7 +10,6 @@ TEMP_FOLDER := tmp
 # Définition en extension pour le débug
 OWL_FILES := $(SRC_FOLDER)/ComposantesMMO/MMO_SousPartie_Carte.owl $(SRC_FOLDER)/ComposantesMMO/MMO_SousPartie_Dénotation.owl
 
-
 SPARQL_QUERIES_TEST := $(wildcard tests/*.sparql)
 
 MMV_TERMS := mmv_term.txt
@@ -23,6 +22,8 @@ MMV_IRI := $(MMO_IRI)
 
 MMO_VERSION := 0.1
 MMV_VERSION := $(MMO_VERSION)
+
+TODAY := $(shell date -I)
 
 
 .PHONY: directories tests 
@@ -73,7 +74,7 @@ $(TEMP_FOLDER)/_$(MMO)_annotated.owl: $(TEMP_FOLDER)/_$(MMO)_reasoned.owl | $(TE
 		--version-iri $(MMO_IRI)/$(MMO_VERSION) \
 		--annotation rdfs:comment "$(shell cat $(TEMP_FOLDER)/_$(MMO)_doc.txt)" \
 		--annotation rdfs:label "Label" \
-		--annotation dc:modified $(shell date -I) \
+		--annotation dc:modified $(TODAY) \
 		--output $@
 
 
@@ -83,7 +84,7 @@ $(TEMP_FOLDER)/_$(MMV)_annotated.owl: $(TEMP_FOLDER)/_$(MMV)_extracted.owl | $(T
 		--version-iri $(MMV_IRI)/$(MMV_VERSION) \
 		--annotation rdfs:comment "$(shell cat $(TEMP_FOLDER)/_$(MMV)_doc.txt)" \
 		--annotation rdfs:label "Label" \
-		--annotation dc:modified $(shell date -I) \
+		--annotation dc:modified $(TODAY) \
 		--output $@
 
 
