@@ -62,11 +62,11 @@
     
 
 
-    <!-- http://purl.org/MMO#DénoteGéon -->
+    <!-- http://purl.org/MMO#DénoteObjetGéographique -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/MMO#DénoteGéon">
+    <owl:ObjectProperty rdf:about="http://purl.org/MMO#DénoteObjetGéographique">
         <rdfs:subPropertyOf rdf:resource="http://purl.org/MMO#Dénote"/>
-        <owl:inverseOf rdf:resource="http://purl.org/MMO#GéonDénotéPar"/>
+        <owl:inverseOf rdf:resource="http://purl.org/MMO#ObjetGéographiqueDénotéPar"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:range rdf:resource="http://purl.org/MMO#Objet_géographique"/>
@@ -92,9 +92,9 @@
     
 
 
-    <!-- http://purl.org/MMO#GéonDénotéPar -->
+    <!-- http://purl.org/MMO#ObjetGéographiqueDénotéPar -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/MMO#GéonDénotéPar">
+    <owl:ObjectProperty rdf:about="http://purl.org/MMO#ObjetGéographiqueDénotéPar">
         <rdfs:subPropertyOf rdf:resource="http://purl.org/MMO#EstDénotéPar"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
@@ -109,8 +109,8 @@
         <rdfs:domain rdf:resource="http://purl.org/MMO#Signifiant"/>
         <rdfs:range rdf:resource="http://purl.org/MMO#Signifiant"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.org/MMO#DénoteGéon"/>
-            <rdf:Description rdf:about="http://purl.org/MMO#GéonDénotéPar"/>
+            <rdf:Description rdf:about="http://purl.org/MMO#DénoteObjetGéographique"/>
+            <rdf:Description rdf:about="http://purl.org/MMO#ObjetGéographiqueDénotéPar"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
     
@@ -392,7 +392,7 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
 
     <owl:NamedIndividual rdf:about="http://purl.org/MMO#Dessin_pharmacie">
         <rdf:type rdf:resource="http://purl.org/MMO#FiguréCartographique"/>
-        <MMO:DénoteGéon rdf:resource="http://purl.org/MMO#geon_3"/>
+        <MMO:DénoteObjetGéographique rdf:resource="http://purl.org/MMO#geon_3"/>
     </owl:NamedIndividual>
     
 
@@ -400,8 +400,8 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
     <!-- http://purl.org/MMO#Groupe_1 -->
 
     <owl:NamedIndividual rdf:about="http://purl.org/MMO#Groupe_1">
-        <MMO:DénoteGéon rdf:resource="http://purl.org/MMO#geon_1"/>
-        <MMO:DénoteGéon rdf:resource="http://purl.org/MMO#geon_2"/>
+        <MMO:DénoteObjetGéographique rdf:resource="http://purl.org/MMO#geon_1"/>
+        <MMO:DénoteObjetGéographique rdf:resource="http://purl.org/MMO#geon_2"/>
         <MMO:EstComposéDe rdf:resource="http://purl.org/MMO#Dessin_Batiment_3"/>
         <MMO:EstComposéDe rdf:resource="http://purl.org/MMO#Dessin_batiment_1"/>
         <MMO:EstComposéDe rdf:resource="http://purl.org/MMO#Dessin_batiment_2"/>
@@ -412,7 +412,7 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
     <!-- http://purl.org/MMO#Groupe_2 -->
 
     <owl:NamedIndividual rdf:about="http://purl.org/MMO#Groupe_2">
-        <MMO:DénoteGéon rdf:resource="http://purl.org/MMO#geon_2"/>
+        <MMO:DénoteObjetGéographique rdf:resource="http://purl.org/MMO#geon_2"/>
         <MMO:EstComposéDe rdf:resource="http://purl.org/MMO#OSM_Batiment_2"/>
         <MMO:EstComposéDe rdf:resource="http://purl.org/MMO#OSM_Batiment_3"/>
     </owl:NamedIndividual>
@@ -443,7 +443,7 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
 
     <owl:NamedIndividual rdf:about="http://purl.org/MMO#OSM_Batiment_1">
         <rdf:type rdf:resource="http://purl.org/MMO#ObjetBaseDonnée"/>
-        <MMO:DénoteGéon rdf:resource="http://purl.org/MMO#geon_1"/>
+        <MMO:DénoteObjetGéographique rdf:resource="http://purl.org/MMO#geon_1"/>
     </owl:NamedIndividual>
     
 
@@ -476,7 +476,7 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
 
     <owl:NamedIndividual rdf:about="http://purl.org/MMO#OSM_Batiment_5">
         <rdf:type rdf:resource="http://purl.org/MMO#ObjetBaseDonnée"/>
-        <MMO:DénoteGéon rdf:resource="http://purl.org/MMO#geon_3"/>
+        <MMO:DénoteObjetGéographique rdf:resource="http://purl.org/MMO#geon_3"/>
     </owl:NamedIndividual>
     
 
@@ -491,7 +491,7 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
 
     <owl:NamedIndividual rdf:about="http://purl.org/MMO#geon_2">
         <MMO:EstDénotéPar rdf:resource="http://purl.org/MMO#Groupe_1"/>
-        <MMO:GéonDénotéPar rdf:resource="http://purl.org/MMO#Dessin_Ilot_1"/>
+        <MMO:ObjetGéographiqueDénotéPar rdf:resource="http://purl.org/MMO#Dessin_Ilot_1"/>
     </owl:NamedIndividual>
     
 
