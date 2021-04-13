@@ -58,7 +58,7 @@ $(TEMP_FOLDER)/_components_merged.owl: $(OWL_FILES)
 
 # Extraction de MMV à partir de l'ontologie temporaire
 $(TEMP_FOLDER)/_$(MMV)_extracted.owl: $(TEMP_FOLDER)/_components_merged.owl
-	@echo "Extraction of $(MMV)"
+	@echo "Extraction of $(MMV)'s concepts"
 	@$(ROBOT) extract --method bot --input $< --term-file $(SRC_FOLDER)/$(MMV_TERMS) --output $@
 
 # Création des axiomes de MMO par résonement
