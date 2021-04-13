@@ -75,7 +75,12 @@ $(TEMP_FOLDER)/_$(MMV)_extracted.owl: $(TEMP_FOLDER)/_components_merged.owl
 # "annotate-inferred-axioms true" permet d'indiquer quels sont les axiomes qui
 # ont été inférés (ne marche qu'avec les axiome type subclass)
 #
-# Renvoie une erreur si des équivalences simple (A ≡ B) sont inférées
+# "equivalent-classes-allowed asserted-only" renvoie une erreur si
+# des équivalences simple (A ≡ B) sont inférées
+#
+# "exclude-tautologies all" permet de virer les tautologies (A owl:topProperty B)
+# créées lors de l'inférence
+#
 $(TEMP_FOLDER)/_$(MMO)_reasoned.owl: $(TEMP_FOLDER)/_components_merged.owl
 	@echo "Reasoning on $(MMO) with : $(AXIOM_GEN) axioms"
 	@$(ROBOT) reason -i $< \
@@ -83,6 +88,7 @@ $(TEMP_FOLDER)/_$(MMO)_reasoned.owl: $(TEMP_FOLDER)/_components_merged.owl
 		--annotate-inferred-axioms false \
 		--equivalent-classes-allowed asserted-only \
 		--axiom-generators "$(AXIOM_GEN)" \
+		--exclude-tautologies all \
 		-o $@
 
 # Extrait la documentation de MMO du readme
