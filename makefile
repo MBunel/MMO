@@ -13,6 +13,9 @@ TESTS_FOLDER := tests
 # Définition en extension pour le débug
 OWL_FILES := $(SRC_FOLDER)/ComposantesMMO/MMO_SousPartie_Carte.owl $(SRC_FOLDER)/ComposantesMMO/MMO_SousPartie_Dénotation.owl
 
+# Axiomes pour le raisonnement
+AXIOM_GEN := SubClass EquivalentClass DisjointClasses DataPropertyCharacteristic EquivalentDataProperties SubDataProperty ClassAssertion PropertyAssertion EquivalentObjectProperty InverseObjectProperties ObjectPropertyCharacteristic SubObjectProperty
+
 # Requêtes pour les tests unitaires de MMO
 SPARQL_QUERIES_TEST := $(wildcard $(TESTS_FOLDER)/*.sparql)
 
@@ -68,9 +71,19 @@ $(TEMP_FOLDER)/_$(MMV)_extracted.owl: $(TEMP_FOLDER)/_components_merged.owl
 	@$(ROBOT) extract --method bot --input $< --term-file $(SRC_FOLDER)/$(MMV_TERMS) --output $@
 
 # Création des axiomes de MMO par résonement
+#
+# "annotate-inferred-axioms true" permet d'indiquer quels sont les axiomes qui
+# ont été inférés (ne marche qu'avec les axiome type subclass)
+#
+# Renvoie une erreur si des équivalences simple (A ≡ B) sont inférées
 $(TEMP_FOLDER)/_$(MMO)_reasoned.owl: $(TEMP_FOLDER)/_components_merged.owl
-	@echo "Reasoning on $(MMO)"
-	@$(ROBOT) reason -i $< -r HERMIT -o $@
+	@echo "Reasoning on $(MMO) with : $(AXIOM_GEN) axioms"
+	@$(ROBOT) reason -i $< \
+		-r HERMIT \
+		--annotate-inferred-axioms false \
+		--equivalent-classes-allowed asserted-only \
+		--axiom-generators "$(AXIOM_GEN)" \
+		-o $@
 
 # Extrait la documentation de MMO du readme
 $(TEMP_FOLDER)/_$(MMO)_doc.txt:
