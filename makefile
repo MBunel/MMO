@@ -34,6 +34,12 @@ MMV_VERSION := $(MMO_VERSION)
 # Date du jour. Pour définit la date de dernière mise à jour
 TODAY := $(shell date -I)
 
+
+# Variables pour la documentation
+MMO_README_SUBTREE := 3877ff17-23f1-488e-9b10-57dea2b70af9
+MMV_README_SUBTREE := 2812eeff-8868-4ed2-afc9-0b79d8bf78ef
+
+
 # Défini les régles à executer à chaque fois
 .PHONY: directories tests
 
@@ -69,12 +75,12 @@ $(TEMP_FOLDER)/_$(MMO)_reasoned.owl: $(TEMP_FOLDER)/_components_merged.owl
 # Extrait la documentation de MMO du readme
 $(TEMP_FOLDER)/_$(MMO)_doc.txt:
 	@echo "Extraction of $(MMO) documentation"
-	@$(EMACS) readme.org --eval '(progn (org-id-goto "3877ff17-23f1-488e-9b10-57dea2b70af9") (org-ascii-export-as-ascii nil t) (write-file "$@"))'
+	@$(EMACS) readme.org --eval '(progn (org-id-goto "$(MMO_README_SUBTREE)") (org-ascii-export-as-ascii nil t) (write-file "$@"))'
 
 # Extrait la documentation de MMV du readme
 $(TEMP_FOLDER)/_$(MMV)_doc.txt:
 	@echo "Extraction of $(MMV) documentation"
-	@$(EMACS) readme.org --eval '(progn (org-id-goto "2812eeff-8868-4ed2-afc9-0b79d8bf78ef") (org-ascii-export-as-ascii nil t) (write-file "$@"))'
+	@$(EMACS) readme.org --eval '(progn (org-id-goto "$(MMV_README_SUBTREE)") (org-ascii-export-as-ascii nil t) (write-file "$@"))'
 
 # Annotation ontologie MMO
 $(TEMP_FOLDER)/_$(MMO)_annotated.owl: $(TEMP_FOLDER)/_$(MMO)_reasoned.owl | $(TEMP_FOLDER)/_$(MMO)_doc.txt
@@ -85,6 +91,7 @@ $(TEMP_FOLDER)/_$(MMO)_annotated.owl: $(TEMP_FOLDER)/_$(MMO)_reasoned.owl | $(TE
 		--annotation rdfs:comment "$(shell cat $(TEMP_FOLDER)/_$(MMO)_doc.txt)" \
 		--annotation rdfs:label "Label" \
 		--annotation dc:modified $(TODAY) \
+		--annotation owl:versionInfo $(MMO_VERSION) \
 		--output $@
 
 # Annotation ontologie MMV
@@ -96,6 +103,7 @@ $(TEMP_FOLDER)/_$(MMV)_annotated.owl: $(TEMP_FOLDER)/_$(MMV)_extracted.owl | $(T
 		--annotation rdfs:comment "$(shell cat $(TEMP_FOLDER)/_$(MMV)_doc.txt)" \
 		--annotation rdfs:label "Label" \
 		--annotation dc:modified $(TODAY) \
+		--annotation owl:versionInfo $(MMO_VERSION) \
 		--output $@
 
 
@@ -121,9 +129,7 @@ evaluation: $(BUILD_FOLDER)/$(MMO).owl
 	@echo "Evaluation of $(MMO).owl"
 	@$(ROBOT) report --input $< --output evaluation_report.html
 
-
 # Règles de nettoyage
-
 # Suppression des fichiers temporaires
 clean:
 	@echo "Removing $(TEMP_FOLDER) folder"
