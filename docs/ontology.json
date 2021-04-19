@@ -691,8 +691,46 @@
 }, {
   "@id" : "http://purl.org/MMO",
   "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://purl.org/dc/elements/1.1/contributor" : [ {
+    "@value" : ""
+  } ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@id" : "https://www.umr-lastig.fr/mattia-bunel/static/foaf.rdf#me"
+  } ],
+  "http://purl.org/dc/elements/1.1/description" : [ {
+    "@language" : "fr",
+    "@value" : "TODO : Description en français"
+  }, {
+    "@language" : "en",
+    "@value" : "TODO :Description in english"
+  } ],
+  "http://purl.org/dc/elements/1.1/issued" : [ {
+    "@value" : "Not yet"
+  } ],
+  "http://purl.org/dc/elements/1.1/licence" : [ {
+    "@id" : "http://cecill.info/licences/Licence_CeCILL_V2.1-en.html"
+  } ],
+  "http://purl.org/dc/elements/1.1/publisher" : [ {
+    "@id" : "https://anr.fr/Projet-ANR-19-CE38-0003"
+  } ],
+  "http://purl.org/dc/elements/1.1/rights" : [ {
+    "@value" : "ANR CORES 2021"
+  } ],
+  "http://purl.org/dc/elements/1.1/title" : [ {
+    "@language" : "en",
+    "@value" : "Mental Map Ontology"
+  }, {
+    "@language" : "fr",
+    "@value" : "Ontologie des cartes mentales"
+  } ],
   "http://purl.org/dc/terms/modified" : [ {
     "@value" : "2021-04-19"
+  } ],
+  "http://purl.org/vocab/vann/preferredNamespacePrefix" : [ {
+    "@value" : "mmo"
+  } ],
+  "http://purl.org/vocab/vann/preferredNamespaceUri" : [ {
+    "@id" : "http://purl.org/MMO"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "**MMO** est l'ontologie des cartes mentales"
@@ -1904,7 +1942,37 @@
     "@id" : "_:genid85"
   } ]
 }, {
+  "@id" : "http://purl.org/dc/elements/1.1/contributor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/elements/1.1/creator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/elements/1.1/description",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/elements/1.1/issued",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/elements/1.1/licence",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/elements/1.1/publisher",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/elements/1.1/rights",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/elements/1.1/title",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
   "@id" : "http://purl.org/dc/terms/modified",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://www.w3.org/2002/07/owl#minQualifiedCardinality",
