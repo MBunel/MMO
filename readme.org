@@ -1,4 +1,5 @@
 #+TITLE: Mental Maps Ontology (MMO)
+#+OPTIONS: toc:nil  
 
 L'ontologie des cartes mentales (MMO) a été construite dans le but de permettre la description de cartes mentales.
 
