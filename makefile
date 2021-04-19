@@ -42,15 +42,17 @@ TODAY := $(shell date -I)
 MMO_README_SUBTREE := 3877ff17-23f1-488e-9b10-57dea2b70af9
 MMV_README_SUBTREE := 2812eeff-8868-4ed2-afc9-0b79d8bf78ef
 
+# Liste des fichiers à générer
+FILES_TO_MAKE := $(addprefix $(BUILD_FOLDER)/, $(MMV).ttl $(MMV).owl $(MMO).ttl $(MMO).owl)
+
 
 # Défini les régles à executer à chaque fois
 .PHONY: directories tests
 
-
 # Règles de construction de l'ontologie
 
 # Régle générale
-all: directories $(BUILD_FOLDER)/$(MMO).owl $(BUILD_FOLDER)/$(MMV).owl
+all: directories $(FILES_TO_MAKE)
 
 # Construction des dossiers nécessaires
 directories: $(BUILD_FOLDER) $(TEMP_FOLDER)
@@ -137,6 +139,10 @@ $(BUILD_FOLDER)/$(MMO).owl: $(TEMP_FOLDER)/_$(MMO)_annotated.owl
 $(BUILD_FOLDER)/$(MMV).owl: $(TEMP_FOLDER)/_$(MMV)_annotated.owl
 	@echo "Creation of $(MMV).owl"
 	@cp $< $@
+
+%.ttl: %.owl
+	@echo "Conversion of $< in $@"
+	@$(ROBOT) convert --input $< --output $@
 
 # Tests unitaires MMO
 tests: $(BUILD_FOLDER)/$(MMO).owl
