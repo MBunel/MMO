@@ -11,7 +11,7 @@
     <owl:Ontology rdf:about="http://purl.org/MMO">
         <owl:versionIRI rdf:resource="http://purl.org/MMO/0.1"/>
         <terms:modified>2021-04-19</terms:modified>
-        <rdfs:comment> # Table of Contents    **MMO** est l&apos;ontologie des cartes mentales</rdfs:comment>
+        <rdfs:comment>**MMO** est l&apos;ontologie des cartes mentales</rdfs:comment>
         <rdfs:label>Label</rdfs:label>
         <owl:versionInfo>0.1</owl:versionInfo>
     </owl:Ontology>

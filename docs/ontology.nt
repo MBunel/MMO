@@ -1,7 +1,7 @@
 <http://purl.org/MMO> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
 <http://purl.org/MMO> <http://www.w3.org/2002/07/owl#versionIRI> <http://purl.org/MMO/0.1> .
 <http://purl.org/MMO> <http://purl.org/dc/terms/modified> "2021-04-19" .
-<http://purl.org/MMO> <http://www.w3.org/2000/01/rdf-schema#comment> " # Table of Contents    **MMO** est l'ontologie des cartes mentales" .
+<http://purl.org/MMO> <http://www.w3.org/2000/01/rdf-schema#comment> "**MMO** est l'ontologie des cartes mentales" .
 <http://purl.org/MMO> <http://www.w3.org/2000/01/rdf-schema#label> "Label" .
 <http://purl.org/MMO> <http://www.w3.org/2002/07/owl#versionInfo> "0.1" .
 # 

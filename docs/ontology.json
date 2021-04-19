@@ -695,7 +695,7 @@
     "@value" : "2021-04-19"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : " # Table of Contents    **MMO** est l'ontologie des cartes mentales"
+    "@value" : "**MMO** est l'ontologie des cartes mentales"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Label"
