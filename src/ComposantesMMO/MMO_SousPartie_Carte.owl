@@ -420,7 +420,34 @@ NB : à changer. Les cartes &quot;eulidiennes&quot; peuvent utiliser une représ
     <!-- http://purl.org/MMO#segmentation_output -->
 
     <owl:Class rdf:about="http://purl.org/MMO#segmentation_output">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/MMO#Production"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/MMO#EstProduitPar"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/MMO#Segmentation"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/MMO#EstProduitPar"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.org/MMO#Segmentation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.org/MMO#Production"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/MMO#EstProduitPar"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/MMO#Segmentation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/MMO#EstProduitPar"/>
+                <owl:allValuesFrom rdf:resource="http://purl.org/MMO#Segmentation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment>Produit de la segmentation, nécessaire de trouver un autre nom</rdfs:comment>
     </owl:Class>
     
