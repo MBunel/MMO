@@ -429,6 +429,7 @@ NB : à changer. Les cartes &quot;eulidiennes&quot; peuvent utiliser une représ
         <owl:disjointWith rdf:resource="http://purl.org/MMO#UnionFiguréCartographie"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#UnionObjetBaseDonnée"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#UnionSignifiant"/>
+        <owl:disjointWith rdf:resource="http://purl.org/MMO#segmentation_output"/>
     </owl:Class>
     
 
@@ -477,6 +478,7 @@ NB : à changer. Les cartes &quot;eulidiennes&quot; peuvent utiliser une représ
         <owl:disjointWith rdf:resource="http://purl.org/MMO#UnionFiguréCartographie"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#UnionObjetBaseDonnée"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#UnionSignifiant"/>
+        <owl:disjointWith rdf:resource="http://purl.org/MMO#segmentation_output"/>
     </owl:Class>
     
 
@@ -495,6 +497,7 @@ NB : à changer. Les cartes &quot;eulidiennes&quot; peuvent utiliser une représ
         <owl:disjointWith rdf:resource="http://purl.org/MMO#Signifié"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#Sémantisation"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#UnionSignifié"/>
+        <owl:disjointWith rdf:resource="http://purl.org/MMO#segmentation_output"/>
         <rdfs:comment>Le nom du concept n&apos;est pas assez discriminant
 
 Pour l&apos;instant ce concept décrit : &quot;Les figurés cartographiques représentant un objet géographique réel (géom)&quot;
@@ -517,6 +520,7 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
         <owl:disjointWith rdf:resource="http://purl.org/MMO#Signifié"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#Sémantisation"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#UnionSignifié"/>
+        <owl:disjointWith rdf:resource="http://purl.org/MMO#segmentation_output"/>
         <rdfs:comment>Nom mal choisi. Il s&apos;agit de tous les objets dans une base de donnée géographique représentant un géon</rdfs:comment>
     </owl:Class>
     
@@ -569,6 +573,7 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
         <owl:disjointWith rdf:resource="http://purl.org/MMO#UnionFiguréCartographie"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#UnionObjetBaseDonnée"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#UnionSignifiant"/>
+        <rdfs:comment>En l&apos;état un objet géographique est défini comme le produit de la sémantisation d&apos;un RSE</rdfs:comment>
         <rdfs:comment>Tout objet spatial qui existe dans la réalité. Il est donc distinct des Figurés cartographiques et des Objets Base donneé</rdfs:comment>
     </owl:Class>
     
@@ -595,6 +600,7 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
         <owl:disjointWith rdf:resource="http://purl.org/MMO#UnionFiguréCartographie"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#UnionObjetBaseDonnée"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#UnionSignifiant"/>
+        <owl:disjointWith rdf:resource="http://purl.org/MMO#segmentation_output"/>
     </owl:Class>
     
 
@@ -683,11 +689,29 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
     <!-- http://purl.org/MMO#Segmentation -->
 
     <owl:Class rdf:about="http://purl.org/MMO#Segmentation">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/MMO#Produit"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/MMO#segmentation_output"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.org/MMO#Processus"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/MMO#Produit"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/MMO#segmentation_output"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/MMO#ProduitAPartirDe"/>
                 <owl:someValuesFrom rdf:resource="http://purl.org/MMO#RSE"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/MMO#Produit"/>
+                <owl:allValuesFrom rdf:resource="http://purl.org/MMO#segmentation_output"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -700,6 +724,7 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
         <owl:disjointWith rdf:resource="http://purl.org/MMO#UnionFiguréCartographie"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#UnionObjetBaseDonnée"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#UnionSignifiant"/>
+        <owl:disjointWith rdf:resource="http://purl.org/MMO#segmentation_output"/>
     </owl:Class>
     
 
@@ -729,6 +754,7 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
         <owl:disjointWith rdf:resource="http://purl.org/MMO#Signifié"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#Sémantisation"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#UnionSignifié"/>
+        <owl:disjointWith rdf:resource="http://purl.org/MMO#segmentation_output"/>
     </owl:Class>
     
 
@@ -779,13 +805,26 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/MMO#ProduitAPartirDe"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/MMO#segmentation_output"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/MMO#Produit"/>
                 <owl:allValuesFrom rdf:resource="http://purl.org/MMO#Objet_géographique"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/MMO#ProduitAPartirDe"/>
+                <owl:allValuesFrom rdf:resource="http://purl.org/MMO#segmentation_output"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#UnionFiguréCartographie"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#UnionObjetBaseDonnée"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#UnionSignifiant"/>
+        <owl:disjointWith rdf:resource="http://purl.org/MMO#segmentation_output"/>
     </owl:Class>
     
 
@@ -820,6 +859,7 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
         <rdfs:subClassOf rdf:resource="http://purl.org/MMO#UnionSignifiant"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#UnionObjetBaseDonnée"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#UnionSignifié"/>
+        <owl:disjointWith rdf:resource="http://purl.org/MMO#segmentation_output"/>
     </owl:Class>
     
 
@@ -840,6 +880,7 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.org/MMO#UnionSignifiant"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#UnionSignifié"/>
+        <owl:disjointWith rdf:resource="http://purl.org/MMO#segmentation_output"/>
     </owl:Class>
     
 
@@ -870,6 +911,7 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#UnionSignifié"/>
+        <owl:disjointWith rdf:resource="http://purl.org/MMO#segmentation_output"/>
     </owl:Class>
     
 
@@ -903,6 +945,42 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
     
 
 
+    <!-- http://purl.org/MMO#segmentation_output -->
+
+    <owl:Class rdf:about="http://purl.org/MMO#segmentation_output">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/MMO#Production"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/MMO#EstProduitPar"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/MMO#Segmentation"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/MMO#EstProduitPar"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.org/MMO#Segmentation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/MMO#Production"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/MMO#EstProduitPar"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/MMO#Segmentation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/MMO#EstProduitPar"/>
+                <owl:allValuesFrom rdf:resource="http://purl.org/MMO#Segmentation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Produit de la segmentation, nécessaire de trouver un autre nom</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -923,6 +1001,7 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
         <AboutiÀ rdf:resource="http://purl.org/MMO#géon_2"/>
         <AboutiÀ rdf:resource="http://purl.org/MMO#géon_3"/>
         <AboutiÀ rdf:resource="http://purl.org/MMO#géon_4"/>
+        <AboutiÀ rdf:resource="http://purl.org/MMO#segment_1"/>
         <EstUtiliséPourProduirePar rdf:resource="http://purl.org/MMO#Segmentation"/>
         <EstUtiliséPourProduirePar rdf:resource="http://purl.org/MMO#Segmentation_2"/>
     </owl:NamedIndividual>
@@ -1144,6 +1223,7 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
         <Produit rdf:resource="http://purl.org/MMO#géon_1"/>
         <Produit rdf:resource="http://purl.org/MMO#géon_2"/>
         <Produit rdf:resource="http://purl.org/MMO#géon_3"/>
+        <Produit rdf:resource="http://purl.org/MMO#segment_1"/>
         <ProduitAPartirDe rdf:resource="http://purl.org/MMO#Carte_bb11"/>
     </owl:NamedIndividual>
     
@@ -1222,7 +1302,7 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
     <!-- http://purl.org/MMO#géon_1 -->
 
     <owl:NamedIndividual rdf:about="http://purl.org/MMO#géon_1">
-        <rdf:type rdf:resource="http://purl.org/MMO#Production"/>
+        <rdf:type rdf:resource="http://purl.org/MMO#segmentation_output"/>
         <EstProduitPar rdf:resource="http://purl.org/MMO#Segmentation"/>
         <IssuDe rdf:resource="http://purl.org/MMO#Carte_bb11"/>
     </owl:NamedIndividual>
@@ -1232,9 +1312,10 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
     <!-- http://purl.org/MMO#géon_2 -->
 
     <owl:NamedIndividual rdf:about="http://purl.org/MMO#géon_2">
-        <rdf:type rdf:resource="http://purl.org/MMO#Production"/>
+        <rdf:type rdf:resource="http://purl.org/MMO#segmentation_output"/>
         <EstProduitPar rdf:resource="http://purl.org/MMO#Segmentation"/>
         <IssuDe rdf:resource="http://purl.org/MMO#Carte_bb11"/>
+        <IssuDe rdf:resource="http://purl.org/MMO#segment_1"/>
     </owl:NamedIndividual>
     
 
@@ -1242,7 +1323,7 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
     <!-- http://purl.org/MMO#géon_3 -->
 
     <owl:NamedIndividual rdf:about="http://purl.org/MMO#géon_3">
-        <rdf:type rdf:resource="http://purl.org/MMO#Production"/>
+        <rdf:type rdf:resource="http://purl.org/MMO#segmentation_output"/>
         <EstProduitPar rdf:resource="http://purl.org/MMO#Segmentation"/>
         <IssuDe rdf:resource="http://purl.org/MMO#Carte_bb11"/>
     </owl:NamedIndividual>
@@ -1252,8 +1333,19 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
     <!-- http://purl.org/MMO#géon_4 -->
 
     <owl:NamedIndividual rdf:about="http://purl.org/MMO#géon_4">
-        <rdf:type rdf:resource="http://purl.org/MMO#Production"/>
+        <rdf:type rdf:resource="http://purl.org/MMO#segmentation_output"/>
         <EstProduitPar rdf:resource="http://purl.org/MMO#Segmentation_2"/>
+        <IssuDe rdf:resource="http://purl.org/MMO#Carte_bb11"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/MMO#segment_1 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/MMO#segment_1">
+        <rdf:type rdf:resource="http://purl.org/MMO#segmentation_output"/>
+        <AboutiÀ rdf:resource="http://purl.org/MMO#géon_2"/>
+        <EstProduitPar rdf:resource="http://purl.org/MMO#Segmentation"/>
         <IssuDe rdf:resource="http://purl.org/MMO#Carte_bb11"/>
     </owl:NamedIndividual>
     <rdf:Description>
