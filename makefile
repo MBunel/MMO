@@ -6,7 +6,7 @@ EMACS := emacs -batch -Q --eval "(require 'org)"
 # Dossiers nécessaires
 SRC_FOLDER := src
 BUILD_FOLDER := build
-DOC_FOLDER := doc
+DOC_FOLDER := docs
 TEMP_FOLDER := tmp
 TESTS_FOLDER := tests
 
