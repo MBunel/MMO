@@ -1,10 +1,12 @@
 # Exécutables
 ROBOT := java -jar ~/Téléchargements/robot.jar
+WIDOCO := java -jar ~/Téléchargements/widoco-1.4.14-jar-with-dependencies.jar
 EMACS := emacs -batch -Q --eval "(require 'org)"
 
 # Dossiers nécessaires
 SRC_FOLDER := src
 BUILD_FOLDER := build
+DOC_FOLDER := doc
 TEMP_FOLDER := tmp
 TESTS_FOLDER := tests
 
@@ -144,6 +146,14 @@ $(BUILD_FOLDER)/$(MMV).owl: $(TEMP_FOLDER)/_$(MMV)_annotated.owl
 	@echo "Conversion of $< in $@"
 	@$(ROBOT) convert --input $< --output $@
 
+# Documentation
+documentation: $(BUILD_FOLDER)/$(MMO).owl
+	@echo "Generate documentation"
+	@$(WIDOCO) -rewriteAll -getOntologyMetadata \
+		-oops -lang en-fr -webVowl -ignoreIndividuals -includeAnnotationProperties \
+		-ontFile $< -outFolder $(DOC_FOLDER) 
+
+
 # Tests unitaires MMO
 tests: $(BUILD_FOLDER)/$(MMO).owl
 	@echo "Verification of $(MMO).owl"
@@ -164,4 +174,6 @@ clean:
 mrproper: clean
 	@echo "Removing $(BUILD_FOLDER) folder"
 	@rm -r $(BUILD_FOLDER)
+	@echo "Removing $(DOC_FOLDER) folder"
+	@rm -r $(DOC_FOLDER)	
 
