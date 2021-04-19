@@ -259,6 +259,7 @@ NB : à changer. Les cartes &quot;eulidiennes&quot; peuvent utiliser une représ
                 <owl:allValuesFrom rdf:resource="http://purl.org/MMO#Sémantisation"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment>En l&apos;état un objet géographique est défini comme le produit de la sémantisation d&apos;un RSE</rdfs:comment>
     </owl:Class>
     
 
@@ -413,6 +414,15 @@ NB : à changer. Les cartes &quot;eulidiennes&quot; peuvent utiliser une représ
     <!-- http://purl.org/MMO#Union -->
 
     <owl:Class rdf:about="http://purl.org/MMO#Union"/>
+    
+
+
+    <!-- http://purl.org/MMO#segmentation_output -->
+
+    <owl:Class rdf:about="http://purl.org/MMO#segmentation_output">
+        <rdfs:subClassOf rdf:resource="http://purl.org/MMO#Production"/>
+        <rdfs:comment>Produit de la segmentation, nécessaire de trouver un autre nom</rdfs:comment>
+    </owl:Class>
     
 
 
