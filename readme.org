@@ -31,11 +31,11 @@ Décrit les processus de restitution
    :ID:       3877ff17-23f1-488e-9b10-57dea2b70af9
    :END:
 
-MMO est l'ontologie des cartes mentales
+*MMO* est l'ontologie des cartes mentales
 
 ** MMV
    :PROPERTIES:
    :ID:       2812eeff-8868-4ed2-afc9-0b79d8bf78ef
    :END:
 
-MMV est un sous ensemble de MMO
+*MMV* est un sous ensemble de *MMO*

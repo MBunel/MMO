@@ -98,12 +98,12 @@ $(TEMP_FOLDER)/_$(MMO)_reasoned.owl: $(TEMP_FOLDER)/_components_merged.owl
 # Extrait la documentation de MMO du readme
 $(TEMP_FOLDER)/_$(MMO)_doc.txt:
 	@echo "Extraction of $(MMO) documentation"
-	@$(EMACS) readme.org --eval '(progn (org-id-goto "$(MMO_README_SUBTREE)") (org-ascii-export-as-ascii nil t) (write-file "$@"))'
+	@$(EMACS) readme.org --eval '(progn (org-id-goto "$(MMO_README_SUBTREE)") (org-md-export-as-markdown nil t) (write-file "$@"))'
 
 # Extrait la documentation de MMV du readme
 $(TEMP_FOLDER)/_$(MMV)_doc.txt:
 	@echo "Extraction of $(MMV) documentation"
-	@$(EMACS) readme.org --eval '(progn (org-id-goto "$(MMV_README_SUBTREE)") (org-ascii-export-as-ascii nil t) (write-file "$@"))'
+	@$(EMACS) readme.org --eval '(progn (org-id-goto "$(MMV_README_SUBTREE)") (org-md-export-as-markdown nil t) (write-file "$@"))'
 
 # Annotation ontologie MMO
 $(TEMP_FOLDER)/_$(MMO)_annotated.owl: $(TEMP_FOLDER)/_$(MMO)_reasoned.owl | $(TEMP_FOLDER)/_$(MMO)_doc.txt
@@ -149,9 +149,9 @@ $(BUILD_FOLDER)/$(MMV).owl: $(TEMP_FOLDER)/_$(MMV)_annotated.owl
 # Documentation
 documentation: $(BUILD_FOLDER)/$(MMO).owl
 	@echo "Generate documentation"
-	@$(WIDOCO) -rewriteAll -getOntologyMetadata \
-		-oops -lang en-fr -webVowl -ignoreIndividuals -includeAnnotationProperties \
-		-ontFile $< -outFolder $(DOC_FOLDER) 
+	@$(WIDOCO) -rewriteAll -lang en-fr \
+		-getOntologyMetadata -includeAnnotationProperties -uniteSections \
+		-ontFile $< -outFolder $(DOC_FOLDER) &> /dev/null
 
 
 # Tests unitaires MMO
