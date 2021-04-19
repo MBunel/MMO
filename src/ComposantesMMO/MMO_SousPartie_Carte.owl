@@ -356,11 +356,29 @@ NB : à changer. Les cartes &quot;eulidiennes&quot; peuvent utiliser une représ
     <!-- http://purl.org/MMO#Segmentation -->
 
     <owl:Class rdf:about="http://purl.org/MMO#Segmentation">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/MMO#Produit"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/MMO#segmentation_output"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.org/MMO#Processus"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/MMO#Produit"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/MMO#segmentation_output"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/MMO#ProduitAPartirDe"/>
                 <owl:someValuesFrom rdf:resource="http://purl.org/MMO#RSE"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/MMO#Produit"/>
+                <owl:allValuesFrom rdf:resource="http://purl.org/MMO#segmentation_output"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -403,8 +421,20 @@ NB : à changer. Les cartes &quot;eulidiennes&quot; peuvent utiliser une représ
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/MMO#ProduitAPartirDe"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/MMO#segmentation_output"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/MMO#Produit"/>
                 <owl:allValuesFrom rdf:resource="http://purl.org/MMO#Objet_géographique"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/MMO#ProduitAPartirDe"/>
+                <owl:allValuesFrom rdf:resource="http://purl.org/MMO#segmentation_output"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -519,6 +549,15 @@ NB : à changer. Les cartes &quot;eulidiennes&quot; peuvent utiliser une représ
     <!-- http://purl.org/MMO#géon_4 -->
 
     <owl:NamedIndividual rdf:about="http://purl.org/MMO#géon_4"/>
+    
+
+
+    <!-- http://purl.org/MMO#segment_1 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/MMO#segment_1">
+        <AboutiÀ rdf:resource="http://purl.org/MMO#géon_2"/>
+        <EstProduitPar rdf:resource="http://purl.org/MMO#Segmentation"/>
+    </owl:NamedIndividual>
     
 
 
