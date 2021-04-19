@@ -11,9 +11,9 @@ TEMP_FOLDER := tmp
 TESTS_FOLDER := tests
 
 # Fichiers Owl
-#OWL_FILES := $(wildcard $(SRC_FOLDER)/ComposantesMMO/*.owl)
+OWL_FILES := $(wildcard $(SRC_FOLDER)/ComposantesMMO/*.owl)
 # Définition en extension pour le débug
-OWL_FILES := $(SRC_FOLDER)/ComposantesMMO/MMO_SousPartie_Carte.owl $(SRC_FOLDER)/ComposantesMMO/MMO_SousPartie_Dénotation.owl
+#OWL_FILES := $(SRC_FOLDER)/ComposantesMMO/MMO_SousPartie_Carte.owl $(SRC_FOLDER)/ComposantesMMO/MMO_SousPartie_Dénotation.owl
 
 # Axiomes pour le raisonnement
 AXIOM_GEN := SubClass EquivalentClass DisjointClasses DataPropertyCharacteristic EquivalentDataProperties SubDataProperty ClassAssertion PropertyAssertion EquivalentObjectProperty InverseObjectProperties ObjectPropertyCharacteristic SubObjectProperty
@@ -23,6 +23,8 @@ SPARQL_QUERIES_TEST := $(wildcard $(TESTS_FOLDER)/*.sparql)
 
 # Fichier listant les termes à extraire pour construire MMV
 MMV_TERMS := mmv_term.txt
+
+ANNOTATION_FILE := $(SRC_FOLDER)/MMO_Header
 
 # Nom des fichiers finaux (sans extension) pour MMO et MMV
 MMO := mmo
@@ -106,7 +108,7 @@ $(TEMP_FOLDER)/_$(MMV)_doc.txt:
 	@$(EMACS) readme.org --eval '(progn (org-id-goto "$(MMV_README_SUBTREE)") (org-md-export-as-markdown nil t) (write-file "$@"))'
 
 # Annotation ontologie MMO
-$(TEMP_FOLDER)/_$(MMO)_annotated.owl: $(TEMP_FOLDER)/_$(MMO)_reasoned.owl | $(TEMP_FOLDER)/_$(MMO)_doc.txt
+$(TEMP_FOLDER)/_$(MMO)_annotated.owl: $(TEMP_FOLDER)/_$(MMO)_reasoned.owl | $(TEMP_FOLDER)/_$(MMO)_doc.txt $(ANNOTATION_FILE).ttl
 	@echo "Annotation of $(MMO)"
 	@$(ROBOT) annotate --input $< \
 		--ontology-iri $(MMO_IRI) \
@@ -115,10 +117,11 @@ $(TEMP_FOLDER)/_$(MMO)_annotated.owl: $(TEMP_FOLDER)/_$(MMO)_reasoned.owl | $(TE
 		--annotation rdfs:label "Label" \
 		--annotation dc:modified $(TODAY) \
 		--annotation owl:versionInfo $(MMO_VERSION) \
+		--annotation-file $(ANNOTATION_FILE).ttl \
 		--output $@
 
 # Annotation ontologie MMV
-$(TEMP_FOLDER)/_$(MMV)_annotated.owl: $(TEMP_FOLDER)/_$(MMV)_extracted.owl | $(TEMP_FOLDER)/_$(MMV)_doc.txt
+$(TEMP_FOLDER)/_$(MMV)_annotated.owl: $(TEMP_FOLDER)/_$(MMV)_extracted.owl | $(TEMP_FOLDER)/_$(MMV)_doc.txt $(ANNOTATION_FILE).ttl
 	@echo "Annotation of $(MMV)"
 	@$(ROBOT) annotate --input $< \
 		--ontology-iri $(MMV_IRI) \
@@ -127,6 +130,7 @@ $(TEMP_FOLDER)/_$(MMV)_annotated.owl: $(TEMP_FOLDER)/_$(MMV)_extracted.owl | $(T
 		--annotation rdfs:label "Label" \
 		--annotation dc:modified $(TODAY) \
 		--annotation owl:versionInfo $(MMO_VERSION) \
+		--annotation-file $(ANNOTATION_FILE).ttl \
 		--output $@
 
 
