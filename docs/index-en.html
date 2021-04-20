@@ -6,7 +6,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"http://schema.org","@type":"TechArticle","url":"http://purl.org/MMO","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://purl.org/MMO","name":"Mental Map Ontology", "headline":"MMO is the main ontology", "datePublished":"2021-04-20", "version":"0.1", "license":"http://cecill.info/licences/Licence_CeCILL_V2.1-en.html", "author":[{"@type":"Person","name":"https://www.umr-lastig.fr/mattia-bunel/static/foaf.rdf#me","url":"https://www.umr-lastig.fr/mattia-bunel/static/foaf.rdf#me"}]}</script>
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"TechArticle","url":"http://purl.org/MMO","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://purl.org/MMO","name":"Mental Map Ontology", "headline":"MMO is the main ontology", "datePublished":"2021-04-20", "version":"0.1", "license":"http://cecill.info/licences/Licence_CeCILL_V2.1-en.html"}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -61,9 +61,6 @@ function loadTOC(){
 <dd><a href="http://purl.org/MMO/0.1">http://purl.org/MMO/0.1</a></dd>
 <dt>Revision:</dt>
 <dd>0.1</dd>
-<dt>Authors:</dt>
-<dd><a href="https://www.umr-lastig.fr/mattia-bunel/static/foaf.rdf#me">https://www.umr-lastig.fr/mattia-bunel/static/foaf.rdf#me</a></dd>
-
 <dt>Publisher:</dt>
 <dd><a href="https://anr.fr/Projet-ANR-19-CE38-0003">https://anr.fr/Projet-ANR-19-CE38-0003</a></dd>
 <dt>Download serialization:</dt><dd><span><a href="ontology.json" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.xml" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License: </dt><dd><a href="http://cecill.info/licences/Licence_CeCILL_V2.1-en.html" target="_blank"><img src="https://img.shields.io/badge/License-http://cecill.info/licences/Licence_CeCILL_V2.1_en.html-blue.svg" alt="http://cecill.info/licences/Licence_CeCILL_V2.1-en.html" /></a>
@@ -249,6 +246,11 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator">
+         <span>creator</span>
+      </a>
+   </li>
+   <li>
       <a href="#Dénote" title="http://purl.org/MMO#Dénote">
          <span>dénote</span>
       </a>
@@ -303,15 +305,16 @@ This ontology has the following classes and properties.</span>
          <span>signification équivalente</span>
       </a>
    </li>
+</ul><h4>Data Properties</h4><ul class="hlist">
+   <li>
+      <a href="#Identifiant_carte_cores" title="http://purl.org/MMO#Identifiant_carte_cores">
+         <span>identifiant carte cores</span>
+      </a>
+   </li>
 </ul><h4>Annotation Properties</h4><ul class="hlist">
    <li>
       <a href="#http://purl.org/dc/terms/bibliographicCitation" title="http://purl.org/dc/terms/bibliographicCitation">
          <span>bibliographic citation</span>
-      </a>
-   </li>
-   <li>
-      <a href="#http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator">
-         <span>creator</span>
       </a>
    </li>
    <li>
@@ -458,6 +461,11 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#" title="http://purl.org/MMO">
+         <span>Label</span>
+      </a>
+   </li>
+   <li>
       <a href="#OSM_Batiment_1" title="http://purl.org/MMO#OSM_Batiment_1">
          <span>o s m batiment 1</span>
       </a>
@@ -480,6 +488,16 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#OSM_Batiment_5" title="http://purl.org/MMO#OSM_Batiment_5">
          <span>o s m batiment 5</span>
+      </a>
+   </li>
+   <li>
+      <a href="#personne_1" title="http://purl.org/MMO#personne_1">
+         <span>personne 1</span>
+      </a>
+   </li>
+   <li>
+      <a href="#personne_2" title="http://purl.org/MMO#personne_2">
+         <span>personne 2</span>
       </a>
    </li>
    <li>
@@ -670,7 +688,8 @@ This section provides details for each class and property defined by Label.
          </dd>
          <dt>is in domain of</dt>
          <dd>
-            <span class="dotted" title="http://purl.org/MMO#IdentifiantCarte">identifiant carte</span>
+            <span class="dotted" title="http://purl.org/MMO#IdentifiantCarte">identifiant carte</span>, <a href="#Identifiant_carte_cores" title="http://purl.org/MMO#Identifiant_carte_cores">identifiant carte cores</a>
+            <sup class="type-dp" title="data property">dp</sup>
          </dd>
          <dt>has members</dt>
          <dd>
@@ -1142,7 +1161,7 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
          </dd>
          <dt>is in domain of</dt>
          <dd>
-            <span class="dotted" title="http://purl.org/dc/terms/creator">creator</span>, <a href="#Produit" title="http://purl.org/MMO#Produit">produit</a>
+            <a href="#Produit" title="http://purl.org/MMO#Produit">produit</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#ProduitAPartirDe" title="http://purl.org/MMO#ProduitAPartirDe">produit a partir de</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
@@ -1200,10 +1219,6 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
             <sup class="type-c" title="class">c</sup>, <a href="#RSE" title="http://purl.org/MMO#RSE">r s e</a>
             <sup class="type-c" title="class">c</sup>, <a href="#segmentation_output" title="http://purl.org/MMO#segmentation_output">segmentation output</a>
             <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is in domain of</dt>
-         <dd>
-            <span class="dotted" title="http://purl.org/dc/terms/creator">creator</span>
          </dd>
          <dt>is disjoint with</dt>
          <dd>
@@ -1741,6 +1756,11 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
          </a>
       </li>
       <li>
+         <a href="#http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator">
+            <span>creator</span>
+         </a>
+      </li>
+      <li>
          <a href="#Dénote" title="http://purl.org/MMO#Dénote">
             <span>dénote</span>
          </a>
@@ -1840,6 +1860,23 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
             <dd>
                <a href="#EstComposéDe" title="http://purl.org/MMO#EstComposéDe">est composé de</a>
                <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://purl.org/dc/terms/creator">
+      <h3>creator<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/dc/terms/creator</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://xmlns.com/foaf/0.1/Agent">agent</span>
+               <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
       </div>
@@ -2128,17 +2165,42 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
          </dl>
       </div>
    </div>
+</div><div id="dataproperties">
+   <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#Identifiant_carte_cores" title="http://purl.org/MMO#Identifiant_carte_cores">
+            <span>identifiant carte cores</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="Identifiant_carte_cores">
+      <h3>identifiant carte cores<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/MMO#Identifiant_carte_cores</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Carte" title="http://purl.org/MMO#Carte">carte</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
 </div><div id="annotationproperties">
    <h3 id="annotationproperties" class="list">Annotation Properties</h3>
    <ul class="hlist">
       <li>
          <a href="#http://purl.org/dc/terms/bibliographicCitation" title="http://purl.org/dc/terms/bibliographicCitation">
             <span>bibliographic citation</span>
-         </a>
-      </li>
-      <li>
-         <a href="#http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator">
-            <span>creator</span>
          </a>
       </li>
       <li>
@@ -2206,32 +2268,6 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
       </h3>
       <p>
          <strong>IRI:</strong> http://purl.org/dc/terms/bibliographicCitation</p>
-   </div>
-   <div class="entity" id="http://purl.org/dc/terms/creator">
-      <h3>creator<sup class="type-ap" title="annotation property">ap</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://purl.org/dc/terms/creator</p>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Processus" title="http://purl.org/MMO#Processus">processus</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dd>
-               <a href="#Production" title="http://purl.org/MMO#Production">production</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="http://xmlns.com/foaf/0.1/Agent">agent</span>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
    </div>
    <div class="entity" id="http://purl.org/dc/terms/description">
       <h3>description<sup class="type-ap" title="annotation property">ap</sup>
@@ -2419,6 +2455,11 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
          </a>
       </li>
       <li>
+         <a href="#" title="http://purl.org/MMO">
+            <span>Label</span>
+         </a>
+      </li>
+      <li>
          <a href="#OSM_Batiment_1" title="http://purl.org/MMO#OSM_Batiment_1">
             <span>o s m batiment 1</span>
          </a>
@@ -2441,6 +2482,16 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
       <li>
          <a href="#OSM_Batiment_5" title="http://purl.org/MMO#OSM_Batiment_5">
             <span>o s m batiment 5</span>
+         </a>
+      </li>
+      <li>
+         <a href="#personne_1" title="http://purl.org/MMO#personne_1">
+            <span>personne 1</span>
+         </a>
+      </li>
+      <li>
+         <a href="#personne_2" title="http://purl.org/MMO#personne_2">
+            <span>personne 2</span>
          </a>
       </li>
       <li>
@@ -2511,6 +2562,21 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
             <a href="#EstUtiliséPourProduirePar" title="http://purl.org/MMO#EstUtiliséPourProduirePar">est utilisé pour produire par</a>
             <sup class="type-op" title="object property">op</sup> 
             <a href="#Segmentation_2" title="http://purl.org/MMO#Segmentation_2">segmentation 2</a>
+         </dd>
+         <dd>
+            <a href="#http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator">creator</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <a href="#personne_1" title="http://purl.org/MMO#personne_1">personne 1</a>
+         </dd>
+         <dd>
+            <a href="#http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator">creator</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <a href="#personne_2" title="http://purl.org/MMO#personne_2">personne 2</a>
+         </dd>
+         <dd>
+            <a href="#Identifiant_carte_cores" title="http://purl.org/MMO#Identifiant_carte_cores">identifiant carte cores</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"AA-01"</span>
          </dd>
       </dl>
    </div>
@@ -3284,6 +3350,23 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
          </dd>
       </dl>
    </div>
+   <div class="entity" id="">
+      <h3>Label<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/MMO</p>
+      <dl class="description">
+         <dt>has facts</dt>
+         <dd>
+            <a href="#http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator">creator</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="dotted"
+                  title="https://www.umr-lastig.fr/mattia-bunel/static/foaf.rdf#me">me</span>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="OSM_Batiment_1">
       <h3>o s m batiment 1<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
@@ -3490,6 +3573,36 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
             <a href="#Signification_équivalente" title="http://purl.org/MMO#Signification_équivalente">signification équivalente</a>
             <sup class="type-op" title="object property">op</sup> 
             <a href="#OSM_Batiment_5" title="http://purl.org/MMO#OSM_Batiment_5">o s m batiment 5</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="personne_1">
+      <h3>personne 1<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/MMO#personne_1</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <span class="dotted" title="http://xmlns.com/foaf/0.1/Agent">agent</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="personne_2">
+      <h3>personne 2<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/MMO#personne_2</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <span class="dotted" title="http://xmlns.com/foaf/0.1/Agent">agent</span>
+            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>

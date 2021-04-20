@@ -1,7 +1,6 @@
 <http://purl.org/MMO> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
 <http://purl.org/MMO> <http://www.w3.org/2002/07/owl#versionIRI> <http://purl.org/MMO/0.1> .
 <http://purl.org/MMO> <http://purl.org/dc/terms/bibliographicCitation> "Bunel M. et al., 2021, Mental Map Ontology" .
-<http://purl.org/MMO> <http://purl.org/dc/terms/creator> <https://www.umr-lastig.fr/mattia-bunel/static/foaf.rdf#me> .
 <http://purl.org/MMO> <http://purl.org/dc/terms/description> "Description"@en .
 <http://purl.org/MMO> <http://purl.org/dc/terms/description> "Description en français"@fr .
 <http://purl.org/MMO> <http://purl.org/dc/terms/issued> "not yet" .
@@ -33,12 +32,6 @@
 # 
 # http://purl.org/dc/terms/bibliographicCitation
 <http://purl.org/dc/terms/bibliographicCitation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/dc/terms/creator
-<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-<http://purl.org/dc/terms/creator> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Agent> .
-<http://purl.org/dc/terms/creator> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/MMO#Processus> .
-<http://purl.org/dc/terms/creator> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/MMO#Production> .
 # 
 # http://purl.org/dc/terms/description
 <http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
@@ -210,6 +203,24 @@ _:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid20 .
 _:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/MMO#ObjetG\u00E9ographiqueD\u00E9not\u00E9Par> .
 _:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/dc/terms/creator> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Agent> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/MMO#Identifiant_carte_cores
+<http://purl.org/MMO#Identifiant_carte_cores> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/MMO#Identifiant_carte_cores> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/MMO#Carte> .
+<http://purl.org/MMO#Identifiant_carte_cores> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
 # 
 # 
 # 
@@ -755,6 +766,11 @@ _:genid92 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://purl.org/MMO#Seg
 # #################################################################
 # 
 # 
+# http://purl.org/MMO
+<http://purl.org/MMO> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/MMO> <http://purl.org/dc/terms/creator> <https://www.umr-lastig.fr/mattia-bunel/static/foaf.rdf#me> .
+<https://www.umr-lastig.fr/mattia-bunel/static/foaf.rdf#me> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
 # http://purl.org/MMO#Carte_bb11
 <http://purl.org/MMO#Carte_bb11> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://purl.org/MMO#Carte_bb11> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/MMO#Carte> .
@@ -766,6 +782,9 @@ _:genid92 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://purl.org/MMO#Seg
 <http://purl.org/MMO#Carte_bb11> <http://purl.org/MMO#Abouti\u00C0> <http://purl.org/MMO#segment_1> .
 <http://purl.org/MMO#Carte_bb11> <http://purl.org/MMO#EstUtilis\u00E9PourProduirePar> <http://purl.org/MMO#Segmentation> .
 <http://purl.org/MMO#Carte_bb11> <http://purl.org/MMO#EstUtilis\u00E9PourProduirePar> <http://purl.org/MMO#Segmentation_2> .
+<http://purl.org/MMO#Carte_bb11> <http://purl.org/dc/terms/creator> <http://purl.org/MMO#personne_1> .
+<http://purl.org/MMO#Carte_bb11> <http://purl.org/dc/terms/creator> <http://purl.org/MMO#personne_2> .
+<http://purl.org/MMO#Carte_bb11> <http://purl.org/MMO#Identifiant_carte_cores> "AA-01" .
 # 
 # http://purl.org/MMO#Dessin_Batiment_3
 <http://purl.org/MMO#Dessin_Batiment_3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -1001,12 +1020,22 @@ _:genid92 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://purl.org/MMO#Seg
 <http://purl.org/MMO#g\u00E9on_4> <http://purl.org/MMO#EstProduitPar> <http://purl.org/MMO#Segmentation_2> .
 <http://purl.org/MMO#g\u00E9on_4> <http://purl.org/MMO#IssuDe> <http://purl.org/MMO#Carte_bb11> .
 # 
+# http://purl.org/MMO#personne_1
+<http://purl.org/MMO#personne_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/MMO#personne_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> .
+# 
+# http://purl.org/MMO#personne_2
+<http://purl.org/MMO#personne_2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/MMO#personne_2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> .
+# 
 # http://purl.org/MMO#segment_1
 <http://purl.org/MMO#segment_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://purl.org/MMO#segment_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/MMO#segmentation_output> .
 <http://purl.org/MMO#segment_1> <http://purl.org/MMO#Abouti\u00C0> <http://purl.org/MMO#g\u00E9on_2> .
 <http://purl.org/MMO#segment_1> <http://purl.org/MMO#EstProduitPar> <http://purl.org/MMO#Segmentation> .
 <http://purl.org/MMO#segment_1> <http://purl.org/MMO#IssuDe> <http://purl.org/MMO#Carte_bb11> .
+# 
+# https://www.umr-lastig.fr/mattia-bunel/static/foaf.rdf#me
 # 
 _:genid93 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "2"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
 # 

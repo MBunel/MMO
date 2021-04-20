@@ -690,7 +690,7 @@
   } ]
 }, {
   "@id" : "http://purl.org/MMO",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://purl.org/dc/terms/bibliographicCitation" : [ {
     "@value" : "Bunel M. et al., 2021, Mental Map Ontology"
   } ],
@@ -953,6 +953,14 @@
     "@id" : "http://purl.org/MMO#Segmentation"
   }, {
     "@id" : "http://purl.org/MMO#Segmentation_2"
+  } ],
+  "http://purl.org/MMO#Identifiant_carte_cores" : [ {
+    "@value" : "AA-01"
+  } ],
+  "http://purl.org/dc/terms/creator" : [ {
+    "@id" : "http://purl.org/MMO#personne_1"
+  }, {
+    "@id" : "http://purl.org/MMO#personne_2"
   } ]
 }, {
   "@id" : "http://purl.org/MMO#Cartographie",
@@ -1308,6 +1316,15 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.org/MMO#Carte"
+  } ]
+}, {
+  "@id" : "http://purl.org/MMO#Identifiant_carte_cores",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/MMO#Carte"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal"
   } ]
 }, {
   "@id" : "http://purl.org/MMO#IssuDe",
@@ -1928,6 +1945,12 @@
     "@id" : "http://purl.org/MMO#Carte_bb11"
   } ]
 }, {
+  "@id" : "http://purl.org/MMO#personne_1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://xmlns.com/foaf/0.1/Agent" ]
+}, {
+  "@id" : "http://purl.org/MMO#personne_2",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://xmlns.com/foaf/0.1/Agent" ]
+}, {
   "@id" : "http://purl.org/MMO#segment_1",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.org/MMO#segmentation_output" ],
   "http://purl.org/MMO#AboutiÀ" : [ {
@@ -1960,12 +1983,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://purl.org/dc/terms/creator",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://purl.org/MMO#Processus"
-  }, {
-    "@id" : "http://purl.org/MMO#Production"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://xmlns.com/foaf/0.1/Agent"
   } ]
@@ -2002,4 +2020,7 @@
 }, {
   "@id" : "http://xmlns.com/foaf/0.1/Agent",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://www.umr-lastig.fr/mattia-bunel/static/foaf.rdf#me",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
 } ]

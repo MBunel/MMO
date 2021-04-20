@@ -52,16 +52,6 @@
     
 
 
-    <!-- http://purl.org/dc/terms/creator -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator">
-        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
-        <rdfs:domain rdf:resource="http://purl.org/MMO#Processus"/>
-        <rdfs:domain rdf:resource="http://purl.org/MMO#Production"/>
-    </owl:AnnotationProperty>
-    
-
-
     <!-- http://www.w3.org/2002/07/owl#minQualifiedCardinality -->
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#minQualifiedCardinality"/>
@@ -296,6 +286,34 @@
             <rdf:Description rdf:about="http://purl.org/MMO#ObjetGéographiqueDénotéPar"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/creator">
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/MMO#Identifiant_carte_cores -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/MMO#Identifiant_carte_cores">
+        <rdfs:domain rdf:resource="http://purl.org/MMO#Carte"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
     
 
 
@@ -1043,6 +1061,9 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
         <AboutiÀ rdf:resource="http://purl.org/MMO#segment_1"/>
         <EstUtiliséPourProduirePar rdf:resource="http://purl.org/MMO#Segmentation"/>
         <EstUtiliséPourProduirePar rdf:resource="http://purl.org/MMO#Segmentation_2"/>
+        <terms:creator rdf:resource="http://purl.org/MMO#personne_1"/>
+        <terms:creator rdf:resource="http://purl.org/MMO#personne_2"/>
+        <Identifiant_carte_cores>AA-01</Identifiant_carte_cores>
     </owl:NamedIndividual>
     
 
@@ -1375,6 +1396,22 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
         <rdf:type rdf:resource="http://purl.org/MMO#segmentation_output"/>
         <EstProduitPar rdf:resource="http://purl.org/MMO#Segmentation_2"/>
         <IssuDe rdf:resource="http://purl.org/MMO#Carte_bb11"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/MMO#personne_1 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/MMO#personne_1">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/MMO#personne_2 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/MMO#personne_2">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
     </owl:NamedIndividual>
     
 
