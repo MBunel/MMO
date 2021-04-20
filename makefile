@@ -150,6 +150,10 @@ $(BUILD_FOLDER)/$(MMV).owl: $(TEMP_FOLDER)/_$(MMV)_annotated.owl
 	@echo "Conversion of $< in $@"
 	@$(ROBOT) convert --input $< --output $@
 
+%.obo: %.owl
+	@echo "Conversion of $< in $@"
+	@$(ROBOT) convert --input $< --output $@
+
 # Documentation
 documentation: $(BUILD_FOLDER)/$(MMO).owl
 	@echo "Generate documentation"
