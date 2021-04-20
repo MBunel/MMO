@@ -56,6 +56,14 @@
     
 
 
+    <!-- http://purl.org/MMO#Auteur -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/MMO#Auteur">
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.org/MMO#EstProduitPar -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/MMO#EstProduitPar">
@@ -107,14 +115,6 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/MMO#Processus"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/dc/terms/creator -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/creator">
-        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
     </owl:ObjectProperty>
     
 
@@ -554,8 +554,8 @@ NB : à changer. Les cartes &quot;eulidiennes&quot; peuvent utiliser une représ
 
     <owl:NamedIndividual rdf:about="http://purl.org/MMO#Carte_bb11">
         <rdf:type rdf:resource="http://purl.org/MMO#Carte"/>
-        <terms:creator rdf:resource="http://purl.org/MMO#personne_1"/>
-        <terms:creator rdf:resource="http://purl.org/MMO#personne_2"/>
+        <Auteur rdf:resource="http://purl.org/MMO#personne_1"/>
+        <Auteur rdf:resource="http://purl.org/MMO#personne_2"/>
         <Identifiant_carte_cores>AA-01</Identifiant_carte_cores>
     </owl:NamedIndividual>
     
