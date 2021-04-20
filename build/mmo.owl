@@ -87,6 +87,14 @@
     
 
 
+    <!-- http://purl.org/MMO#Auteur -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/MMO#Auteur">
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.org/MMO#Compose -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/MMO#Compose">
@@ -285,14 +293,6 @@
             <rdf:Description rdf:about="http://purl.org/MMO#DénoteObjetGéographique"/>
             <rdf:Description rdf:about="http://purl.org/MMO#ObjetGéographiqueDénotéPar"/>
         </owl:propertyChainAxiom>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/dc/terms/creator -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/creator">
-        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
     </owl:ObjectProperty>
     
 
@@ -1059,10 +1059,10 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
         <AboutiÀ rdf:resource="http://purl.org/MMO#géon_3"/>
         <AboutiÀ rdf:resource="http://purl.org/MMO#géon_4"/>
         <AboutiÀ rdf:resource="http://purl.org/MMO#segment_1"/>
+        <Auteur rdf:resource="http://purl.org/MMO#personne_1"/>
+        <Auteur rdf:resource="http://purl.org/MMO#personne_2"/>
         <EstUtiliséPourProduirePar rdf:resource="http://purl.org/MMO#Segmentation"/>
         <EstUtiliséPourProduirePar rdf:resource="http://purl.org/MMO#Segmentation_2"/>
-        <terms:creator rdf:resource="http://purl.org/MMO#personne_1"/>
-        <terms:creator rdf:resource="http://purl.org/MMO#personne_2"/>
         <Identifiant_carte_cores>AA-01</Identifiant_carte_cores>
     </owl:NamedIndividual>
     

@@ -690,7 +690,7 @@
   } ]
 }, {
   "@id" : "http://purl.org/MMO",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
   "http://purl.org/dc/terms/bibliographicCitation" : [ {
     "@value" : "Bunel M. et al., 2021, Mental Map Ontology"
   } ],
@@ -770,6 +770,12 @@
     }, {
       "@id" : "http://purl.org/MMO#Produit"
     } ]
+  } ]
+}, {
+  "@id" : "http://purl.org/MMO#Auteur",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Agent"
   } ]
 }, {
   "@id" : "http://purl.org/MMO#Carte",
@@ -949,6 +955,11 @@
   }, {
     "@id" : "http://purl.org/MMO#segment_1"
   } ],
+  "http://purl.org/MMO#Auteur" : [ {
+    "@id" : "http://purl.org/MMO#personne_1"
+  }, {
+    "@id" : "http://purl.org/MMO#personne_2"
+  } ],
   "http://purl.org/MMO#EstUtiliséPourProduirePar" : [ {
     "@id" : "http://purl.org/MMO#Segmentation"
   }, {
@@ -956,11 +967,6 @@
   } ],
   "http://purl.org/MMO#Identifiant_carte_cores" : [ {
     "@value" : "AA-01"
-  } ],
-  "http://purl.org/dc/terms/creator" : [ {
-    "@id" : "http://purl.org/MMO#personne_1"
-  }, {
-    "@id" : "http://purl.org/MMO#personne_2"
   } ]
 }, {
   "@id" : "http://purl.org/MMO#Cartographie",
@@ -1983,10 +1989,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://purl.org/dc/terms/creator",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://xmlns.com/foaf/0.1/Agent"
-  } ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://purl.org/dc/terms/description",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
@@ -2020,7 +2023,4 @@
 }, {
   "@id" : "http://xmlns.com/foaf/0.1/Agent",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
-  "@id" : "https://www.umr-lastig.fr/mattia-bunel/static/foaf.rdf#me",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
 } ]
