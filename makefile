@@ -101,41 +101,75 @@ $(TEMP_FOLDER)/_$(MMO)_reasoned.owl: $(TEMP_FOLDER)/_components_merged.owl
 		-o $@
 
 # Extrait la documentation de MMO du readme
-$(TEMP_FOLDER)/_$(MMO)_doc.txt:
+$(TEMP_FOLDER)/_$(MMO)_doc_en.txt:
 	@echo "Extraction of $(MMO) documentation"
-	@$(EMACS) readme.org --eval '(progn (org-id-goto "$(MMO_README_SUBTREE)") (org-md-export-as-markdown nil t) (write-file "$@"))'
+	@$(EMACS) readme.org --eval '(progn (org-id-goto "$(MMO_README_EN_SUBTREE)") (org-md-export-as-markdown nil t) (write-file "$@"))'
 
 # Extrait la documentation de MMV du readme
-$(TEMP_FOLDER)/_$(MMV)_doc.txt:
+$(TEMP_FOLDER)/_$(MMV)_doc_en.txt:
 	@echo "Extraction of $(MMV) documentation"
-	@$(EMACS) readme.org --eval '(progn (org-id-goto "$(MMV_README_SUBTREE)") (org-md-export-as-markdown nil t) (write-file "$@"))'
+	@$(EMACS) readme.org --eval '(progn (org-id-goto "$(MMV_README_EN_SUBTREE)") (org-md-export-as-markdown nil t) (write-file "$@"))'
+
+$(TEMP_FOLDER)/_$(MMO)_doc_fr.txt:
+	@echo "Extraction of $(MMO) documentation"
+	@$(EMACS) readme.org --eval '(progn (org-id-goto "$(MMO_README_FR_SUBTREE)") (org-md-export-as-markdown nil t) (write-file "$@"))'
+
+# Extrait la documentation de MMV du readme
+$(TEMP_FOLDER)/_$(MMV)_doc_fr.txt:
+	@echo "Extraction of $(MMV) documentation"
+	@$(EMACS) readme.org --eval '(progn (org-id-goto "$(MMV_README_FR_SUBTREE)") (org-md-export-as-markdown nil t) (write-file "$@"))'
 
 # Annotation ontologie MMO
-$(TEMP_FOLDER)/_$(MMO)_annotated.owl: $(TEMP_FOLDER)/_$(MMO)_reasoned.owl | $(TEMP_FOLDER)/_$(MMO)_doc.txt $(ANNOTATION_FILE).ttl
+$(TEMP_FOLDER)/_$(MMO)_annotated.owl: $(TEMP_FOLDER)/_$(MMO)_reasoned.owl | $(TEMP_FOLDER)/_$(MMO)_doc_en.txt $(TEMP_FOLDER)/_$(MMO)_doc_fr.txt
 	@echo "Annotation of $(MMO)"
-	@$(ROBOT) annotate --input $< \
+	@$(ROBOT) --add-prefix "vann: http://purl.org/vocab/vann/" annotate \
 		--ontology-iri $(MMO_IRI) \
 		--version-iri $(MMO_IRI)/$(MMO_VERSION) \
-		--annotation rdfs:comment "$(shell cat $(TEMP_FOLDER)/_$(MMO)_doc.txt)" \
-		--annotation rdfs:label "Label" \
+		--language-annotation rdfs:comment "$(shell cat $(TEMP_FOLDER)/_$(MMO)_doc_en.txt)" en \
+		--language-annotation rdfs:comment "$(shell cat $(TEMP_FOLDER)/_$(MMO)_doc_fr.txt)" fr \
+		--language-annotation rdfs:label "Label" en \
+		--language-annotation rdfs:label "Label fr" fr \
+		--link-annotation dc:creator "https://www.umr-lastig.fr/mattia-bunel/static/foaf.rdf#me" \
+		--language-annotation dc:description "Description" en \
+		--language-annotation dc:description "Description en français" fr \
+		--annotation dc:issued "not yet" \
+		--link-annotation dc:license "http://cecill.info/licences/Licence_CeCILL_V2.1-en.html" \
+		--link-annotation dc:publisher "https://anr.fr/Projet-ANR-19-CE38-0003" \
+		--annotation dc:rights "ANR CORES 2021" \
+		--language-annotation dc:title "Mental Map Ontology" en \
+		--language-annotation dc:title "Ontologie des cartes mentales" fr \
+		--annotation dc:bibliographicCitation "Bunel M. et al., 2021, Mental Map Ontology" \
+		--annotation vann:preferredNamespacePrefix "mmo" \
+		--link-annotation vann:preferredNamespaceUri $(MMO_IRI) \
 		--annotation dc:modified $(TODAY) \
 		--annotation owl:versionInfo $(MMO_VERSION) \
-		--annotation-file $(ANNOTATION_FILE).ttl \
-		--output $@
+		--input $< --output $@
 
 # Annotation ontologie MMV
-$(TEMP_FOLDER)/_$(MMV)_annotated.owl: $(TEMP_FOLDER)/_$(MMV)_extracted.owl | $(TEMP_FOLDER)/_$(MMV)_doc.txt $(ANNOTATION_FILE).ttl
+$(TEMP_FOLDER)/_$(MMV)_annotated.owl: $(TEMP_FOLDER)/_$(MMV)_extracted.owl | $(TEMP_FOLDER)/_$(MMV)_doc_en.txt $(TEMP_FOLDER)/_$(MMV)_doc_fr.txt
 	@echo "Annotation of $(MMV)"
-	@$(ROBOT) annotate --input $< \
+	@$(ROBOT) --add-prefix "vann: http://purl.org/vocab/vann/" annotate \
 		--ontology-iri $(MMV_IRI) \
 		--version-iri $(MMV_IRI)/$(MMV_VERSION) \
-		--annotation rdfs:comment "$(shell cat $(TEMP_FOLDER)/_$(MMV)_doc.txt)" \
-		--annotation rdfs:label "Label" \
+		--language-annotation rdfs:comment "$(shell cat $(TEMP_FOLDER)/_$(MMV)_doc_en.txt)" en \
+		--language-annotation rdfs:comment "$(shell cat $(TEMP_FOLDER)/_$(MMV)_doc_fr.txt)" fr \
+		--language-annotation rdfs:label "Label" en \
+		--language-annotation rdfs:label "Label fr" fr \
+		--link-annotation dc:creator "https://www.umr-lastig.fr/mattia-bunel/static/foaf.rdf#me" \
+		--language-annotation dc:description "Description" en \
+		--language-annotation dc:description "Description en français" fr \
+		--annotation dc:issued "not yet" \
+		--link-annotation dc:license "http://cecill.info/licences/Licence_CeCILL_V2.1-en.html" \
+		--link-annotation dc:publisher "https://anr.fr/Projet-ANR-19-CE38-0003" \
+		--annotation dc:rights "ANR CORES 2021" \
+		--language-annotation dc:title "Mental Map Ontology" en \
+		--language-annotation dc:title "Ontologie des cartes mentales" fr \
+		--annotation dc:bibliographicCitation "Bunel M. et al., 2021, Mental Map Ontology" \
+		--annotation vann:preferredNamespacePrefix "mmo" \
+		--link-annotation vann:preferredNamespaceUri $(MMV_IRI) \
 		--annotation dc:modified $(TODAY) \
-		--annotation owl:versionInfo $(MMO_VERSION) \
-		--annotation-file $(ANNOTATION_FILE).ttl \
-		--output $@
-
+		--annotation owl:versionInfo $(MMV_VERSION) \
+		--input $< --output $@
 
 # Création des versions finales MMO et MMV
 
