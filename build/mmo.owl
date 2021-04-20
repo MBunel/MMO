@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://purl.org/MMO#"
      xml:base="http://purl.org/MMO"
-     xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:MMO="http://purl.org/MMO#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -12,21 +11,23 @@
      xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="http://purl.org/MMO">
         <owl:versionIRI rdf:resource="http://purl.org/MMO/0.1"/>
-        <dc:contributor></dc:contributor>
-        <dc:creator rdf:resource="https://www.umr-lastig.fr/mattia-bunel/static/foaf.rdf#me"/>
-        <dc:description xml:lang="fr">TODO : Description en français</dc:description>
-        <dc:description xml:lang="en">TODO :Description in english</dc:description>
-        <dc:issued>Not yet</dc:issued>
-        <dc:licence rdf:resource="http://cecill.info/licences/Licence_CeCILL_V2.1-en.html"/>
-        <dc:publisher rdf:resource="https://anr.fr/Projet-ANR-19-CE38-0003"/>
-        <dc:rights>ANR CORES 2021</dc:rights>
-        <dc:title xml:lang="en">Mental Map Ontology</dc:title>
-        <dc:title xml:lang="fr">Ontologie des cartes mentales</dc:title>
-        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-04-19</terms:modified>
-        <vann:preferredNamespacePrefix>mmo</vann:preferredNamespacePrefix>
+        <terms:bibliographicCitation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bunel M. et al., 2021, Mental Map Ontology</terms:bibliographicCitation>
+        <terms:creator rdf:resource="https://www.umr-lastig.fr/mattia-bunel/static/foaf.rdf#me"/>
+        <terms:description xml:lang="en">Description</terms:description>
+        <terms:description xml:lang="fr">Description en français</terms:description>
+        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#string">not yet</terms:issued>
+        <terms:license rdf:resource="http://cecill.info/licences/Licence_CeCILL_V2.1-en.html"/>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-04-20</terms:modified>
+        <terms:publisher rdf:resource="https://anr.fr/Projet-ANR-19-CE38-0003"/>
+        <terms:rights rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ANR CORES 2021</terms:rights>
+        <terms:title xml:lang="en">Mental Map Ontology</terms:title>
+        <terms:title xml:lang="fr">Ontologie des cartes mentales</terms:title>
+        <vann:preferredNamespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mmo</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:resource="http://purl.org/MMO"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">**MMO** est l&apos;ontologie des cartes mentales</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Label</rdfs:label>
+        <rdfs:comment xml:lang="fr">**MMO** est l&apos;ontologie des cartes mentales</rdfs:comment>
+        <rdfs:comment xml:lang="en">MMO is the main ontology</rdfs:comment>
+        <rdfs:label xml:lang="en">Label</rdfs:label>
+        <rdfs:label xml:lang="fr">Label fr</rdfs:label>
         <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.1</owl:versionInfo>
     </owl:Ontology>
     
@@ -40,66 +41,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- http://purl.org/dc/elements/1.1/contributor -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor"/>
-    
-
-
-    <!-- http://purl.org/dc/elements/1.1/creator -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
-    
-
-
-    <!-- http://purl.org/dc/elements/1.1/description -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
-    
-
-
-    <!-- http://purl.org/dc/elements/1.1/issued -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/issued"/>
-    
-
-
-    <!-- http://purl.org/dc/elements/1.1/licence -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/licence"/>
-    
-
-
-    <!-- http://purl.org/dc/elements/1.1/publisher -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/publisher"/>
-    
-
-
-    <!-- http://purl.org/dc/elements/1.1/rights -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/rights"/>
-    
-
-
-    <!-- http://purl.org/dc/elements/1.1/title -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
-    
-
-
-    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
-    
-
-
-    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
     
 
 
