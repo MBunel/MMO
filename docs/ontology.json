@@ -793,6 +793,8 @@
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
     "@id" : "http://purl.org/MMO#Cartographie"
   }, {
+    "@id" : "http://purl.org/MMO#Expérience"
+  }, {
     "@id" : "http://purl.org/MMO#Externalisation"
   }, {
     "@id" : "http://purl.org/MMO#FiguréCartographique"
@@ -834,6 +836,8 @@
   }, {
     "@id" : "http://purl.org/MMO#Cartographie"
   }, {
+    "@id" : "http://purl.org/MMO#Expérience"
+  }, {
     "@id" : "http://purl.org/MMO#Externalisation"
   }, {
     "@id" : "http://purl.org/MMO#FiguréCartographique"
@@ -862,6 +866,8 @@
   } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
     "@id" : "http://purl.org/MMO#Cartographie"
+  }, {
+    "@id" : "http://purl.org/MMO#Expérience"
   }, {
     "@id" : "http://purl.org/MMO#Externalisation"
   }, {
@@ -892,6 +898,8 @@
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
     "@id" : "http://purl.org/MMO#Cartographie"
   }, {
+    "@id" : "http://purl.org/MMO#Expérience"
+  }, {
     "@id" : "http://purl.org/MMO#Externalisation"
   }, {
     "@id" : "http://purl.org/MMO#FiguréCartographique"
@@ -920,6 +928,8 @@
   } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
     "@id" : "http://purl.org/MMO#Cartographie"
+  }, {
+    "@id" : "http://purl.org/MMO#Expérience"
   }, {
     "@id" : "http://purl.org/MMO#Externalisation"
   }, {
@@ -1158,6 +1168,35 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "http://purl.org/MMO#ProduitAPartirDe"
+  } ]
+}, {
+  "@id" : "http://purl.org/MMO#Expérience",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/MMO#Processus"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "http://purl.org/MMO#FiguréCartographique"
+  }, {
+    "@id" : "http://purl.org/MMO#ObjetBaseDonnée"
+  }, {
+    "@id" : "http://purl.org/MMO#ObjetSpatial"
+  }, {
+    "@id" : "http://purl.org/MMO#Objet_géographique"
+  }, {
+    "@id" : "http://purl.org/MMO#Production"
+  }, {
+    "@id" : "http://purl.org/MMO#RSE"
+  }, {
+    "@id" : "http://purl.org/MMO#Signifiant"
+  }, {
+    "@id" : "http://purl.org/MMO#UnionFiguréCartographie"
+  }, {
+    "@id" : "http://purl.org/MMO#UnionObjetBaseDonnée"
+  }, {
+    "@id" : "http://purl.org/MMO#UnionSignifiant"
+  }, {
+    "@id" : "http://purl.org/MMO#segmentation_output"
   } ]
 }, {
   "@id" : "http://purl.org/MMO#Externalisation",
@@ -2023,4 +2062,16 @@
 }, {
   "@id" : "http://xmlns.com/foaf/0.1/Agent",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://xmlns.com/foaf/0.1/Group",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Agent"
+  } ]
+}, {
+  "@id" : "http://xmlns.com/foaf/0.1/Person",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Agent"
+  } ]
 } ]

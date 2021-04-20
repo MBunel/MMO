@@ -257,6 +257,7 @@ _:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 _:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://purl.org/MMO#Carte> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/MMO#Production> .
 <http://purl.org/MMO#Carte> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#Cartographie> .
+<http://purl.org/MMO#Carte> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#Exp\u00E9rience> .
 <http://purl.org/MMO#Carte> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#Externalisation> .
 <http://purl.org/MMO#Carte> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#Figur\u00E9Cartographique> .
 <http://purl.org/MMO#Carte> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#ObjetBaseDonn\u00E9e> .
@@ -282,6 +283,7 @@ _:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <http://purl.org/MMO#CarteEuclidienne> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#CartePerceptive> .
 <http://purl.org/MMO#CarteEuclidienne> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#CarteSensible> .
 <http://purl.org/MMO#CarteEuclidienne> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#Cartographie> .
+<http://purl.org/MMO#CarteEuclidienne> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#Exp\u00E9rience> .
 <http://purl.org/MMO#CarteEuclidienne> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#Externalisation> .
 <http://purl.org/MMO#CarteEuclidienne> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#Figur\u00E9Cartographique> .
 <http://purl.org/MMO#CarteEuclidienne> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#ObjetBaseDonn\u00E9e> .
@@ -298,6 +300,7 @@ _:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <http://purl.org/MMO#CarteMentale> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://purl.org/MMO#CarteMentale> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/MMO#Carte> .
 <http://purl.org/MMO#CarteMentale> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#Cartographie> .
+<http://purl.org/MMO#CarteMentale> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#Exp\u00E9rience> .
 <http://purl.org/MMO#CarteMentale> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#Externalisation> .
 <http://purl.org/MMO#CarteMentale> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#Figur\u00E9Cartographique> .
 <http://purl.org/MMO#CarteMentale> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#ObjetBaseDonn\u00E9e> .
@@ -313,6 +316,7 @@ _:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <http://purl.org/MMO#CartePerceptive> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://purl.org/MMO#CartePerceptive> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/MMO#CarteMentale> .
 <http://purl.org/MMO#CartePerceptive> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#Cartographie> .
+<http://purl.org/MMO#CartePerceptive> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#Exp\u00E9rience> .
 <http://purl.org/MMO#CartePerceptive> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#Externalisation> .
 <http://purl.org/MMO#CartePerceptive> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#Figur\u00E9Cartographique> .
 <http://purl.org/MMO#CartePerceptive> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#ObjetBaseDonn\u00E9e> .
@@ -328,6 +332,7 @@ _:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <http://purl.org/MMO#CarteSensible> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://purl.org/MMO#CarteSensible> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/MMO#CartePerceptive> .
 <http://purl.org/MMO#CarteSensible> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#Cartographie> .
+<http://purl.org/MMO#CarteSensible> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#Exp\u00E9rience> .
 <http://purl.org/MMO#CarteSensible> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#Externalisation> .
 <http://purl.org/MMO#CarteSensible> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#Figur\u00E9Cartographique> .
 <http://purl.org/MMO#CarteSensible> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#ObjetBaseDonn\u00E9e> .
@@ -365,6 +370,21 @@ _:genid32 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://purl.org/MMO#Car
 <http://purl.org/MMO#Cartographie> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#UnionObjetBaseDonn\u00E9e> .
 <http://purl.org/MMO#Cartographie> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#UnionSignifiant> .
 <http://purl.org/MMO#Cartographie> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#segmentation_output> .
+# 
+# http://purl.org/MMO#Expérience
+<http://purl.org/MMO#Exp\u00E9rience> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/MMO#Exp\u00E9rience> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/MMO#Processus> .
+<http://purl.org/MMO#Exp\u00E9rience> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#Figur\u00E9Cartographique> .
+<http://purl.org/MMO#Exp\u00E9rience> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#ObjetBaseDonn\u00E9e> .
+<http://purl.org/MMO#Exp\u00E9rience> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#ObjetSpatial> .
+<http://purl.org/MMO#Exp\u00E9rience> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#Objet_g\u00E9ographique> .
+<http://purl.org/MMO#Exp\u00E9rience> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#Production> .
+<http://purl.org/MMO#Exp\u00E9rience> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#RSE> .
+<http://purl.org/MMO#Exp\u00E9rience> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#Signifiant> .
+<http://purl.org/MMO#Exp\u00E9rience> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#UnionFigur\u00E9Cartographie> .
+<http://purl.org/MMO#Exp\u00E9rience> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#UnionObjetBaseDonn\u00E9e> .
+<http://purl.org/MMO#Exp\u00E9rience> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#UnionSignifiant> .
+<http://purl.org/MMO#Exp\u00E9rience> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/MMO#segmentation_output> .
 # 
 # http://purl.org/MMO#Externalisation
 <http://purl.org/MMO#Externalisation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -760,6 +780,14 @@ _:genid92 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://purl.org/MMO#Seg
 # 
 # http://xmlns.com/foaf/0.1/Agent
 <http://xmlns.com/foaf/0.1/Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://xmlns.com/foaf/0.1/Group
+<http://xmlns.com/foaf/0.1/Group> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://xmlns.com/foaf/0.1/Group> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Agent> .
+# 
+# http://xmlns.com/foaf/0.1/Person
+<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Agent> .
 # 
 # 
 # 

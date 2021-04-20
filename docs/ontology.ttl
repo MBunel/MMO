@@ -244,6 +244,7 @@ owl:minQualifiedCardinality rdf:type owl:AnnotationProperty .
                            ] ;
        rdfs:subClassOf :Production ;
        owl:disjointWith :Cartographie ,
+                        :Expérience ,
                         :Externalisation ,
                         :FiguréCartographique ,
                         :ObjetBaseDonnée ,
@@ -266,6 +267,7 @@ owl:minQualifiedCardinality rdf:type owl:AnnotationProperty .
                                    :CartePerceptive ,
                                    :CarteSensible ,
                                    :Cartographie ,
+                                   :Expérience ,
                                    :Externalisation ,
                                    :FiguréCartographique ,
                                    :ObjetBaseDonnée ,
@@ -285,6 +287,7 @@ NB : à changer. Les cartes \"eulidiennes\" peuvent utiliser une représentation
 :CarteMentale rdf:type owl:Class ;
               rdfs:subClassOf :Carte ;
               owl:disjointWith :Cartographie ,
+                               :Expérience ,
                                :Externalisation ,
                                :FiguréCartographique ,
                                :ObjetBaseDonnée ,
@@ -301,6 +304,7 @@ NB : à changer. Les cartes \"eulidiennes\" peuvent utiliser une représentation
 :CartePerceptive rdf:type owl:Class ;
                  rdfs:subClassOf :CarteMentale ;
                  owl:disjointWith :Cartographie ,
+                                  :Expérience ,
                                   :Externalisation ,
                                   :FiguréCartographique ,
                                   :ObjetBaseDonnée ,
@@ -317,6 +321,7 @@ NB : à changer. Les cartes \"eulidiennes\" peuvent utiliser une représentation
 :CarteSensible rdf:type owl:Class ;
                rdfs:subClassOf :CartePerceptive ;
                owl:disjointWith :Cartographie ,
+                                :Expérience ,
                                 :Externalisation ,
                                 :FiguréCartographique ,
                                 :ObjetBaseDonnée ,
@@ -355,6 +360,22 @@ NB : à changer. Les cartes \"eulidiennes\" peuvent utiliser une représentation
                                :UnionObjetBaseDonnée ,
                                :UnionSignifiant ,
                                :segmentation_output .
+
+
+###  http://purl.org/MMO#Expérience
+:Expérience rdf:type owl:Class ;
+            rdfs:subClassOf :Processus ;
+            owl:disjointWith :FiguréCartographique ,
+                             :ObjetBaseDonnée ,
+                             :ObjetSpatial ,
+                             :Objet_géographique ,
+                             :Production ,
+                             :RSE ,
+                             :Signifiant ,
+                             :UnionFiguréCartographie ,
+                             :UnionObjetBaseDonnée ,
+                             :UnionSignifiant ,
+                             :segmentation_output .
 
 
 ###  http://purl.org/MMO#Externalisation
@@ -754,6 +775,16 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
 
 ###  http://xmlns.com/foaf/0.1/Agent
 <http://xmlns.com/foaf/0.1/Agent> rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Group
+<http://xmlns.com/foaf/0.1/Group> rdf:type owl:Class ;
+                                  rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+<http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class ;
+                                   rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> .
 
 
 #################################################################
