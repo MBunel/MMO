@@ -47,7 +47,7 @@ MMO_README_SUBTREE := 3877ff17-23f1-488e-9b10-57dea2b70af9
 MMV_README_SUBTREE := 2812eeff-8868-4ed2-afc9-0b79d8bf78ef
 
 # Liste des fichiers à générer
-FILES_TO_MAKE := $(addprefix $(BUILD_FOLDER)/, $(MMV).ttl $(MMV).owl $(MMO).ttl $(MMO).owl)
+FILES_TO_MAKE := $(addprefix $(BUILD_FOLDER)/, $(MMO).ttl $(MMO).owl)
 
 
 # Défini les régles à executer à chaque fois
