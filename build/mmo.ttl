@@ -31,6 +31,18 @@
 #    Annotation properties
 #################################################################
 
+###  http://purl.org/MMO#IdentifiantCarte
+:IdentifiantCarte rdf:type owl:AnnotationProperty ;
+                  rdfs:domain :Carte .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty ;
+                                   rdfs:range <http://xmlns.com/foaf/0.1/Agent> ;
+                                   rdfs:domain :Processus ,
+                                               :Production .
+
+
 ###  http://www.w3.org/2002/07/owl#minQualifiedCardinality
 owl:minQualifiedCardinality rdf:type owl:AnnotationProperty .
 
@@ -698,6 +710,10 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
                                        owl:allValuesFrom :Segmentation
                                      ] ;
                      rdfs:comment "Produit de la segmentation, nécessaire de trouver un autre nom" .
+
+
+###  http://xmlns.com/foaf/0.1/Agent
+<http://xmlns.com/foaf/0.1/Agent> rdf:type owl:Class .
 
 
 #################################################################

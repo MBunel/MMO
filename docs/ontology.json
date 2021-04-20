@@ -1304,6 +1304,12 @@
   "@id" : "http://purl.org/MMO#Groupe_5",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
 }, {
+  "@id" : "http://purl.org/MMO#IdentifiantCarte",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/MMO#Carte"
+  } ]
+}, {
   "@id" : "http://purl.org/MMO#IssuDe",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2002/07/owl#equivalentProperty" : [ {
@@ -1954,7 +1960,15 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://purl.org/dc/terms/creator",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/MMO#Processus"
+  }, {
+    "@id" : "http://purl.org/MMO#Production"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Agent"
+  } ]
 }, {
   "@id" : "http://purl.org/dc/terms/description",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
@@ -1985,4 +1999,7 @@
 }, {
   "@id" : "http://www.w3.org/2002/07/owl#minQualifiedCardinality",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://xmlns.com/foaf/0.1/Agent",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 } ]

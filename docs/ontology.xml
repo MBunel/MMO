@@ -45,6 +45,15 @@
     
 
 
+    <!-- http://purl.org/MMO#IdentifiantCarte -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/MMO#IdentifiantCarte">
+        <rdfs:domain rdf:resource="http://purl.org/MMO#Carte"/>
+    </owl:AnnotationProperty>
+    
+
+
     <!-- http://purl.org/dc/terms/bibliographicCitation -->
 
 
@@ -55,7 +64,11 @@
     <!-- http://purl.org/dc/terms/creator -->
 
 
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator">
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:domain rdf:resource="http://purl.org/MMO#Processus"/>
+        <rdfs:domain rdf:resource="http://purl.org/MMO#Production"/>
+    </owl:AnnotationProperty>
     
 
 
@@ -1082,6 +1095,13 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
         </rdfs:subClassOf>
         <rdfs:comment>Produit de la segmentation, nécessaire de trouver un autre nom</rdfs:comment>
     </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Agent -->
+
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Agent"/>
     
 
 

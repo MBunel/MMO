@@ -27,11 +27,18 @@
 # #################################################################
 # 
 # 
+# http://purl.org/MMO#IdentifiantCarte
+<http://purl.org/MMO#IdentifiantCarte> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/MMO#IdentifiantCarte> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/MMO#Carte> .
+# 
 # http://purl.org/dc/terms/bibliographicCitation
 <http://purl.org/dc/terms/bibliographicCitation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # http://purl.org/dc/terms/creator
 <http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/dc/terms/creator> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Agent> .
+<http://purl.org/dc/terms/creator> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/MMO#Processus> .
+<http://purl.org/dc/terms/creator> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/MMO#Production> .
 # 
 # http://purl.org/dc/terms/description
 <http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
@@ -735,6 +742,9 @@ _:genid92 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 _:genid92 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/MMO#EstProduitPar> .
 _:genid92 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://purl.org/MMO#Segmentation> .
 <http://purl.org/MMO#segmentation_output> <http://www.w3.org/2000/01/rdf-schema#comment> "Produit de la segmentation, nécessaire de trouver un autre nom" .
+# 
+# http://xmlns.com/foaf/0.1/Agent
+<http://xmlns.com/foaf/0.1/Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
 # 
 # 
