@@ -12,8 +12,6 @@ TESTS_FOLDER := tests
 
 # Fichiers Owl
 OWL_FILES := $(wildcard $(SRC_FOLDER)/ComposantesMMO/*.owl)
-# Définition en extension pour le débug
-#OWL_FILES := $(SRC_FOLDER)/ComposantesMMO/MMO_SousPartie_Carte.owl $(SRC_FOLDER)/ComposantesMMO/MMO_SousPartie_Dénotation.owl
 
 # Axiomes pour le raisonnement
 AXIOM_GEN := SubClass EquivalentClass DisjointClasses DataPropertyCharacteristic EquivalentDataProperties SubDataProperty ClassAssertion PropertyAssertion EquivalentObjectProperty InverseObjectProperties ObjectPropertyCharacteristic SubObjectProperty
