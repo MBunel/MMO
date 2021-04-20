@@ -1,20 +1,22 @@
 <http://purl.org/MMO> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
 <http://purl.org/MMO> <http://www.w3.org/2002/07/owl#versionIRI> <http://purl.org/MMO/0.1> .
-<http://purl.org/MMO> <http://purl.org/dc/elements/1.1/contributor> "" .
-<http://purl.org/MMO> <http://purl.org/dc/elements/1.1/creator> <https://www.umr-lastig.fr/mattia-bunel/static/foaf.rdf#me> .
-<http://purl.org/MMO> <http://purl.org/dc/elements/1.1/description> "TODO : Description en français"@fr .
-<http://purl.org/MMO> <http://purl.org/dc/elements/1.1/description> "TODO :Description in english"@en .
-<http://purl.org/MMO> <http://purl.org/dc/elements/1.1/issued> "Not yet" .
-<http://purl.org/MMO> <http://purl.org/dc/elements/1.1/licence> <http://cecill.info/licences/Licence_CeCILL_V2.1-en.html> .
-<http://purl.org/MMO> <http://purl.org/dc/elements/1.1/publisher> <https://anr.fr/Projet-ANR-19-CE38-0003> .
-<http://purl.org/MMO> <http://purl.org/dc/elements/1.1/rights> "ANR CORES 2021" .
-<http://purl.org/MMO> <http://purl.org/dc/elements/1.1/title> "Mental Map Ontology"@en .
-<http://purl.org/MMO> <http://purl.org/dc/elements/1.1/title> "Ontologie des cartes mentales"@fr .
-<http://purl.org/MMO> <http://purl.org/dc/terms/modified> "2021-04-19" .
+<http://purl.org/MMO> <http://purl.org/dc/terms/bibliographicCitation> "Bunel M. et al., 2021, Mental Map Ontology" .
+<http://purl.org/MMO> <http://purl.org/dc/terms/creator> <https://www.umr-lastig.fr/mattia-bunel/static/foaf.rdf#me> .
+<http://purl.org/MMO> <http://purl.org/dc/terms/description> "Description"@en .
+<http://purl.org/MMO> <http://purl.org/dc/terms/description> "Description en français"@fr .
+<http://purl.org/MMO> <http://purl.org/dc/terms/issued> "not yet" .
+<http://purl.org/MMO> <http://purl.org/dc/terms/license> <http://cecill.info/licences/Licence_CeCILL_V2.1-en.html> .
+<http://purl.org/MMO> <http://purl.org/dc/terms/modified> "2021-04-20" .
+<http://purl.org/MMO> <http://purl.org/dc/terms/publisher> <https://anr.fr/Projet-ANR-19-CE38-0003> .
+<http://purl.org/MMO> <http://purl.org/dc/terms/rights> "ANR CORES 2021" .
+<http://purl.org/MMO> <http://purl.org/dc/terms/title> "Mental Map Ontology"@en .
+<http://purl.org/MMO> <http://purl.org/dc/terms/title> "Ontologie des cartes mentales"@fr .
 <http://purl.org/MMO> <http://purl.org/vocab/vann/preferredNamespacePrefix> "mmo" .
 <http://purl.org/MMO> <http://purl.org/vocab/vann/preferredNamespaceUri> <http://purl.org/MMO> .
-<http://purl.org/MMO> <http://www.w3.org/2000/01/rdf-schema#comment> "**MMO** est l'ontologie des cartes mentales" .
-<http://purl.org/MMO> <http://www.w3.org/2000/01/rdf-schema#label> "Label" .
+<http://purl.org/MMO> <http://www.w3.org/2000/01/rdf-schema#comment> "**MMO** est l'ontologie des cartes mentales"@fr .
+<http://purl.org/MMO> <http://www.w3.org/2000/01/rdf-schema#comment> "MMO is the main ontology"@en .
+<http://purl.org/MMO> <http://www.w3.org/2000/01/rdf-schema#label> "Label"@en .
+<http://purl.org/MMO> <http://www.w3.org/2000/01/rdf-schema#label> "Label fr"@fr .
 <http://purl.org/MMO> <http://www.w3.org/2002/07/owl#versionInfo> "0.1" .
 # 
 # 
@@ -25,32 +27,32 @@
 # #################################################################
 # 
 # 
-# http://purl.org/dc/elements/1.1/contributor
-<http://purl.org/dc/elements/1.1/contributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# http://purl.org/dc/terms/bibliographicCitation
+<http://purl.org/dc/terms/bibliographicCitation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
-# http://purl.org/dc/elements/1.1/creator
-<http://purl.org/dc/elements/1.1/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
-# http://purl.org/dc/elements/1.1/description
-<http://purl.org/dc/elements/1.1/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
-# http://purl.org/dc/elements/1.1/issued
-<http://purl.org/dc/elements/1.1/issued> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
-# http://purl.org/dc/elements/1.1/licence
-<http://purl.org/dc/elements/1.1/licence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/dc/elements/1.1/publisher
-<http://purl.org/dc/elements/1.1/publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/dc/elements/1.1/rights
-<http://purl.org/dc/elements/1.1/rights> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/dc/elements/1.1/title
-<http://purl.org/dc/elements/1.1/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # http://purl.org/dc/terms/modified
 <http://purl.org/dc/terms/modified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/rights
+<http://purl.org/dc/terms/rights> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # http://purl.org/vocab/vann/preferredNamespacePrefix
 <http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .

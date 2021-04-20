@@ -691,40 +691,40 @@
 }, {
   "@id" : "http://purl.org/MMO",
   "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
-  "http://purl.org/dc/elements/1.1/contributor" : [ {
-    "@value" : ""
+  "http://purl.org/dc/terms/bibliographicCitation" : [ {
+    "@value" : "Bunel M. et al., 2021, Mental Map Ontology"
   } ],
-  "http://purl.org/dc/elements/1.1/creator" : [ {
+  "http://purl.org/dc/terms/creator" : [ {
     "@id" : "https://www.umr-lastig.fr/mattia-bunel/static/foaf.rdf#me"
   } ],
-  "http://purl.org/dc/elements/1.1/description" : [ {
-    "@language" : "fr",
-    "@value" : "TODO : Description en français"
-  }, {
+  "http://purl.org/dc/terms/description" : [ {
     "@language" : "en",
-    "@value" : "TODO :Description in english"
+    "@value" : "Description"
+  }, {
+    "@language" : "fr",
+    "@value" : "Description en français"
   } ],
-  "http://purl.org/dc/elements/1.1/issued" : [ {
-    "@value" : "Not yet"
+  "http://purl.org/dc/terms/issued" : [ {
+    "@value" : "not yet"
   } ],
-  "http://purl.org/dc/elements/1.1/licence" : [ {
+  "http://purl.org/dc/terms/license" : [ {
     "@id" : "http://cecill.info/licences/Licence_CeCILL_V2.1-en.html"
   } ],
-  "http://purl.org/dc/elements/1.1/publisher" : [ {
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-04-20"
+  } ],
+  "http://purl.org/dc/terms/publisher" : [ {
     "@id" : "https://anr.fr/Projet-ANR-19-CE38-0003"
   } ],
-  "http://purl.org/dc/elements/1.1/rights" : [ {
+  "http://purl.org/dc/terms/rights" : [ {
     "@value" : "ANR CORES 2021"
   } ],
-  "http://purl.org/dc/elements/1.1/title" : [ {
+  "http://purl.org/dc/terms/title" : [ {
     "@language" : "en",
     "@value" : "Mental Map Ontology"
   }, {
     "@language" : "fr",
     "@value" : "Ontologie des cartes mentales"
-  } ],
-  "http://purl.org/dc/terms/modified" : [ {
-    "@value" : "2021-04-19"
   } ],
   "http://purl.org/vocab/vann/preferredNamespacePrefix" : [ {
     "@value" : "mmo"
@@ -733,10 +733,18 @@
     "@id" : "http://purl.org/MMO"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "fr",
     "@value" : "**MMO** est l'ontologie des cartes mentales"
+  }, {
+    "@language" : "en",
+    "@value" : "MMO is the main ontology"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
     "@value" : "Label"
+  }, {
+    "@language" : "fr",
+    "@value" : "Label fr"
   } ],
   "http://www.w3.org/2002/07/owl#versionIRI" : [ {
     "@id" : "http://purl.org/MMO/0.1"
@@ -1942,31 +1950,31 @@
     "@id" : "_:genid85"
   } ]
 }, {
-  "@id" : "http://purl.org/dc/elements/1.1/contributor",
+  "@id" : "http://purl.org/dc/terms/bibliographicCitation",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
-  "@id" : "http://purl.org/dc/elements/1.1/creator",
+  "@id" : "http://purl.org/dc/terms/creator",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
-  "@id" : "http://purl.org/dc/elements/1.1/description",
+  "@id" : "http://purl.org/dc/terms/description",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
-  "@id" : "http://purl.org/dc/elements/1.1/issued",
+  "@id" : "http://purl.org/dc/terms/issued",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
-  "@id" : "http://purl.org/dc/elements/1.1/licence",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/dc/elements/1.1/publisher",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/dc/elements/1.1/rights",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/dc/elements/1.1/title",
+  "@id" : "http://purl.org/dc/terms/license",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://purl.org/dc/terms/modified",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/publisher",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/rights",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/title",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix",
