@@ -17,7 +17,7 @@
         <terms:description xml:lang="fr">Description en français</terms:description>
         <terms:issued>not yet</terms:issued>
         <terms:license rdf:resource="http://cecill.info/licences/Licence_CeCILL_V2.1-en.html"/>
-        <terms:modified>2021-04-20</terms:modified>
+        <terms:modified>2021-06-01</terms:modified>
         <terms:publisher rdf:resource="https://anr.fr/Projet-ANR-19-CE38-0003"/>
         <terms:rights>ANR CORES 2021</terms:rights>
         <terms:title xml:lang="en">Mental Map Ontology</terms:title>
@@ -554,7 +554,7 @@ NB : à changer. Les cartes &quot;eulidiennes&quot; peuvent utiliser une représ
         <owl:disjointWith rdf:resource="http://purl.org/MMO#ObjetSpatial"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#Objet_géographique"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#Production"/>
-        <owl:disjointWith rdf:resource="http://purl.org/MMO#RSE"/>
+        <owl:disjointWith rdf:resource="http://purl.org/MMO#Référentiel_spatial_externe"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#Signifiant"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#UnionFiguréCartographie"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#UnionObjetBaseDonnée"/>
@@ -574,7 +574,7 @@ NB : à changer. Les cartes &quot;eulidiennes&quot; peuvent utiliser une représ
         <owl:disjointWith rdf:resource="http://purl.org/MMO#ObjetSpatial"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#Objet_géographique"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#Production"/>
-        <owl:disjointWith rdf:resource="http://purl.org/MMO#RSE"/>
+        <owl:disjointWith rdf:resource="http://purl.org/MMO#Référentiel_spatial_externe"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#Signifiant"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#UnionFiguréCartographie"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#UnionObjetBaseDonnée"/>
@@ -591,32 +591,32 @@ NB : à changer. Les cartes &quot;eulidiennes&quot; peuvent utiliser une représ
         <owl:equivalentClass>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/MMO#Produit"/>
-                <owl:someValuesFrom rdf:resource="http://purl.org/MMO#RSE"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/MMO#Référentiel_spatial_externe"/>
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.org/MMO#Processus"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/MMO#Produit"/>
-                <owl:someValuesFrom rdf:resource="http://purl.org/MMO#RSE"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/MMO#Référentiel_spatial_externe"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/MMO#ProduitAPartirDe"/>
-                <owl:someValuesFrom rdf:resource="http://purl.org/MMO#RSI"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/MMO#Référentiel_spatial_interne"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/MMO#Produit"/>
-                <owl:allValuesFrom rdf:resource="http://purl.org/MMO#RSE"/>
+                <owl:allValuesFrom rdf:resource="http://purl.org/MMO#Référentiel_spatial_externe"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/MMO#ProduitAPartirDe"/>
-                <owl:allValuesFrom rdf:resource="http://purl.org/MMO#RSI"/>
+                <owl:allValuesFrom rdf:resource="http://purl.org/MMO#Référentiel_spatial_interne"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#FiguréCartographique"/>
@@ -624,7 +624,7 @@ NB : à changer. Les cartes &quot;eulidiennes&quot; peuvent utiliser une représ
         <owl:disjointWith rdf:resource="http://purl.org/MMO#ObjetSpatial"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#Objet_géographique"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#Production"/>
-        <owl:disjointWith rdf:resource="http://purl.org/MMO#RSE"/>
+        <owl:disjointWith rdf:resource="http://purl.org/MMO#Référentiel_spatial_externe"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#Signifiant"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#UnionFiguréCartographie"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#UnionObjetBaseDonnée"/>
@@ -644,7 +644,7 @@ NB : à changer. Les cartes &quot;eulidiennes&quot; peuvent utiliser une représ
         <owl:disjointWith rdf:resource="http://purl.org/MMO#Objet_géographique"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#Processus"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#Production"/>
-        <owl:disjointWith rdf:resource="http://purl.org/MMO#RSE"/>
+        <owl:disjointWith rdf:resource="http://purl.org/MMO#Référentiel_spatial_externe"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#Segmentation"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#Signifié"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#Sémantisation"/>
@@ -668,7 +668,7 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
         <owl:disjointWith rdf:resource="http://purl.org/MMO#Objet_géographique"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#Processus"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#Production"/>
-        <owl:disjointWith rdf:resource="http://purl.org/MMO#RSE"/>
+        <owl:disjointWith rdf:resource="http://purl.org/MMO#Référentiel_spatial_externe"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#Segmentation"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#Signifié"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#Sémantisation"/>
@@ -751,7 +751,7 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#Production"/>
-        <owl:disjointWith rdf:resource="http://purl.org/MMO#RSE"/>
+        <owl:disjointWith rdf:resource="http://purl.org/MMO#Référentiel_spatial_externe"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#Signifiant"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#UnionFiguréCartographie"/>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#UnionObjetBaseDonnée"/>
@@ -793,10 +793,10 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
     
 
 
-    <!-- http://purl.org/MMO#RSE -->
+    <!-- http://purl.org/MMO#Référentiel_spatial_externe -->
 
 
-    <owl:Class rdf:about="http://purl.org/MMO#RSE">
+    <owl:Class rdf:about="http://purl.org/MMO#Référentiel_spatial_externe">
         <owl:equivalentClass>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/MMO#EstProduitPar"/>
@@ -838,10 +838,10 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
     
 
 
-    <!-- http://purl.org/MMO#RSI -->
+    <!-- http://purl.org/MMO#Référentiel_spatial_interne -->
 
 
-    <owl:Class rdf:about="http://purl.org/MMO#RSI"/>
+    <owl:Class rdf:about="http://purl.org/MMO#Référentiel_spatial_interne"/>
     
 
 
@@ -865,7 +865,7 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/MMO#ProduitAPartirDe"/>
-                <owl:someValuesFrom rdf:resource="http://purl.org/MMO#RSE"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/MMO#Référentiel_spatial_externe"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -877,7 +877,7 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/MMO#ProduitAPartirDe"/>
-                <owl:allValuesFrom rdf:resource="http://purl.org/MMO#RSE"/>
+                <owl:allValuesFrom rdf:resource="http://purl.org/MMO#Référentiel_spatial_externe"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://purl.org/MMO#Signifiant"/>
@@ -1192,7 +1192,7 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
 
     <owl:NamedIndividual rdf:about="http://purl.org/MMO#Carte_bb11">
         <rdf:type rdf:resource="http://purl.org/MMO#Carte"/>
-        <rdf:type rdf:resource="http://purl.org/MMO#RSE"/>
+        <rdf:type rdf:resource="http://purl.org/MMO#Référentiel_spatial_externe"/>
         <AboutiÀ rdf:resource="http://purl.org/MMO#géon_1"/>
         <AboutiÀ rdf:resource="http://purl.org/MMO#géon_2"/>
         <AboutiÀ rdf:resource="http://purl.org/MMO#géon_3"/>

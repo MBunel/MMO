@@ -164,7 +164,7 @@
     "@id" : "http://purl.org/MMO#Produit"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "http://purl.org/MMO#RSE"
+    "@id" : "http://purl.org/MMO#Référentiel_spatial_externe"
   } ]
 }, {
   "@id" : "_:genid34",
@@ -173,7 +173,7 @@
     "@id" : "http://purl.org/MMO#Produit"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "http://purl.org/MMO#RSE"
+    "@id" : "http://purl.org/MMO#Référentiel_spatial_externe"
   } ]
 }, {
   "@id" : "_:genid35",
@@ -182,13 +182,13 @@
     "@id" : "http://purl.org/MMO#ProduitAPartirDe"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "http://purl.org/MMO#RSI"
+    "@id" : "http://purl.org/MMO#Référentiel_spatial_interne"
   } ]
 }, {
   "@id" : "_:genid36",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
-    "@id" : "http://purl.org/MMO#RSE"
+    "@id" : "http://purl.org/MMO#Référentiel_spatial_externe"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://purl.org/MMO#Produit"
@@ -197,7 +197,7 @@
   "@id" : "_:genid37",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
-    "@id" : "http://purl.org/MMO#RSI"
+    "@id" : "http://purl.org/MMO#Référentiel_spatial_interne"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://purl.org/MMO#ProduitAPartirDe"
@@ -349,7 +349,7 @@
     "@id" : "http://purl.org/MMO#ProduitAPartirDe"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "http://purl.org/MMO#RSE"
+    "@id" : "http://purl.org/MMO#Référentiel_spatial_externe"
   } ]
 }, {
   "@id" : "_:genid57",
@@ -364,7 +364,7 @@
   "@id" : "_:genid58",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
-    "@id" : "http://purl.org/MMO#RSE"
+    "@id" : "http://purl.org/MMO#Référentiel_spatial_externe"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://purl.org/MMO#ProduitAPartirDe"
@@ -711,7 +711,7 @@
     "@id" : "http://cecill.info/licences/Licence_CeCILL_V2.1-en.html"
   } ],
   "http://purl.org/dc/terms/modified" : [ {
-    "@value" : "2021-04-20"
+    "@value" : "2021-06-01"
   } ],
   "http://purl.org/dc/terms/publisher" : [ {
     "@id" : "https://anr.fr/Projet-ANR-19-CE38-0003"
@@ -953,7 +953,7 @@
   } ]
 }, {
   "@id" : "http://purl.org/MMO#Carte_bb11",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.org/MMO#Carte", "http://purl.org/MMO#RSE" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.org/MMO#Carte", "http://purl.org/MMO#Référentiel_spatial_externe" ],
   "http://purl.org/MMO#AboutiÀ" : [ {
     "@id" : "http://purl.org/MMO#géon_1"
   }, {
@@ -999,7 +999,7 @@
   }, {
     "@id" : "http://purl.org/MMO#Production"
   }, {
-    "@id" : "http://purl.org/MMO#RSE"
+    "@id" : "http://purl.org/MMO#Référentiel_spatial_externe"
   }, {
     "@id" : "http://purl.org/MMO#Signifiant"
   }, {
@@ -1186,7 +1186,7 @@
   }, {
     "@id" : "http://purl.org/MMO#Production"
   }, {
-    "@id" : "http://purl.org/MMO#RSE"
+    "@id" : "http://purl.org/MMO#Référentiel_spatial_externe"
   }, {
     "@id" : "http://purl.org/MMO#Signifiant"
   }, {
@@ -1223,7 +1223,7 @@
   }, {
     "@id" : "http://purl.org/MMO#Production"
   }, {
-    "@id" : "http://purl.org/MMO#RSE"
+    "@id" : "http://purl.org/MMO#Référentiel_spatial_externe"
   }, {
     "@id" : "http://purl.org/MMO#Signifiant"
   }, {
@@ -1258,7 +1258,7 @@
   }, {
     "@id" : "http://purl.org/MMO#Production"
   }, {
-    "@id" : "http://purl.org/MMO#RSE"
+    "@id" : "http://purl.org/MMO#Référentiel_spatial_externe"
   }, {
     "@id" : "http://purl.org/MMO#Segmentation"
   }, {
@@ -1477,7 +1477,7 @@
   }, {
     "@id" : "http://purl.org/MMO#Production"
   }, {
-    "@id" : "http://purl.org/MMO#RSE"
+    "@id" : "http://purl.org/MMO#Référentiel_spatial_externe"
   }, {
     "@id" : "http://purl.org/MMO#Segmentation"
   }, {
@@ -1568,7 +1568,7 @@
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
     "@id" : "http://purl.org/MMO#Production"
   }, {
-    "@id" : "http://purl.org/MMO#RSE"
+    "@id" : "http://purl.org/MMO#Référentiel_spatial_externe"
   }, {
     "@id" : "http://purl.org/MMO#Signifiant"
   }, {
@@ -1626,7 +1626,7 @@
     "@id" : "_:genid15"
   } ]
 }, {
-  "@id" : "http://purl.org/MMO#RSE",
+  "@id" : "http://purl.org/MMO#Référentiel_spatial_externe",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://purl.org/MMO#Production"
@@ -1656,7 +1656,7 @@
     "@id" : "_:genid49"
   } ]
 }, {
-  "@id" : "http://purl.org/MMO#RSI",
+  "@id" : "http://purl.org/MMO#Référentiel_spatial_interne",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
   "@id" : "http://purl.org/MMO#Segmentation",

@@ -14,7 +14,7 @@
                                                               "Description en français"@fr ;
                        <http://purl.org/dc/terms/issued> "not yet" ;
                        <http://purl.org/dc/terms/license> <http://cecill.info/licences/Licence_CeCILL_V2.1-en.html> ;
-                       <http://purl.org/dc/terms/modified> "2021-04-20" ;
+                       <http://purl.org/dc/terms/modified> "2021-06-01" ;
                        <http://purl.org/dc/terms/publisher> <https://anr.fr/Projet-ANR-19-CE38-0003> ;
                        <http://purl.org/dc/terms/rights> "ANR CORES 2021" ;
                        <http://purl.org/dc/terms/title> "Mental Map Ontology"@en ,
@@ -354,7 +354,7 @@ NB : à changer. Les cartes \"eulidiennes\" peuvent utiliser une représentation
                                :ObjetSpatial ,
                                :Objet_géographique ,
                                :Production ,
-                               :RSE ,
+                               :Référentiel_spatial_externe ,
                                :Signifiant ,
                                :UnionFiguréCartographie ,
                                :UnionObjetBaseDonnée ,
@@ -370,7 +370,7 @@ NB : à changer. Les cartes \"eulidiennes\" peuvent utiliser une représentation
                              :ObjetSpatial ,
                              :Objet_géographique ,
                              :Production ,
-                             :RSE ,
+                             :Référentiel_spatial_externe ,
                              :Signifiant ,
                              :UnionFiguréCartographie ,
                              :UnionObjetBaseDonnée ,
@@ -382,31 +382,31 @@ NB : à changer. Les cartes \"eulidiennes\" peuvent utiliser une représentation
 :Externalisation rdf:type owl:Class ;
                  owl:equivalentClass [ rdf:type owl:Restriction ;
                                        owl:onProperty :Produit ;
-                                       owl:someValuesFrom :RSE
+                                       owl:someValuesFrom :Référentiel_spatial_externe
                                      ] ;
                  rdfs:subClassOf :Processus ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty :Produit ;
-                                   owl:someValuesFrom :RSE
+                                   owl:someValuesFrom :Référentiel_spatial_externe
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty :ProduitAPartirDe ;
-                                   owl:someValuesFrom :RSI
+                                   owl:someValuesFrom :Référentiel_spatial_interne
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty :Produit ;
-                                   owl:allValuesFrom :RSE
+                                   owl:allValuesFrom :Référentiel_spatial_externe
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty :ProduitAPartirDe ;
-                                   owl:allValuesFrom :RSI
+                                   owl:allValuesFrom :Référentiel_spatial_interne
                                  ] ;
                  owl:disjointWith :FiguréCartographique ,
                                   :ObjetBaseDonnée ,
                                   :ObjetSpatial ,
                                   :Objet_géographique ,
                                   :Production ,
-                                  :RSE ,
+                                  :Référentiel_spatial_externe ,
                                   :Signifiant ,
                                   :UnionFiguréCartographie ,
                                   :UnionObjetBaseDonnée ,
@@ -422,7 +422,7 @@ NB : à changer. Les cartes \"eulidiennes\" peuvent utiliser une représentation
                                        :Objet_géographique ,
                                        :Processus ,
                                        :Production ,
-                                       :RSE ,
+                                       :Référentiel_spatial_externe ,
                                        :Segmentation ,
                                        :Signifié ,
                                        :Sémantisation ,
@@ -442,7 +442,7 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
                  owl:disjointWith :Objet_géographique ,
                                   :Processus ,
                                   :Production ,
-                                  :RSE ,
+                                  :Référentiel_spatial_externe ,
                                   :Segmentation ,
                                   :Signifié ,
                                   :Sémantisation ,
@@ -502,7 +502,7 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
                              owl:allValuesFrom :Production
                            ] ;
            owl:disjointWith :Production ,
-                            :RSE ,
+                            :Référentiel_spatial_externe ,
                             :Signifiant ,
                             :UnionFiguréCartographie ,
                             :UnionObjetBaseDonnée ,
@@ -532,39 +532,39 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
                              :UnionSignifiant .
 
 
-###  http://purl.org/MMO#RSE
-:RSE rdf:type owl:Class ;
-     owl:equivalentClass [ rdf:type owl:Restriction ;
-                           owl:onProperty :EstProduitPar ;
-                           owl:someValuesFrom :Externalisation
-                         ] ;
-     rdfs:subClassOf :Production ,
-                     [ rdf:type owl:Restriction ;
-                       owl:onProperty :EstProduitPar ;
-                       owl:someValuesFrom :Externalisation
-                     ] ,
-                     [ rdf:type owl:Restriction ;
-                       owl:onProperty :EstUtiliséPourProduirePar ;
-                       owl:someValuesFrom :Segmentation
-                     ] ,
-                     [ rdf:type owl:Restriction ;
-                       owl:onProperty :EstProduitPar ;
-                       owl:allValuesFrom :Externalisation
-                     ] ,
-                     [ rdf:type owl:Restriction ;
-                       owl:onProperty :EstUtiliséPourProduirePar ;
-                       owl:allValuesFrom :Segmentation
-                     ] ;
-     owl:disjointWith :Segmentation ,
-                      :Signifiant ,
-                      :Sémantisation ,
-                      :UnionFiguréCartographie ,
-                      :UnionObjetBaseDonnée ,
-                      :UnionSignifiant .
+###  http://purl.org/MMO#Référentiel_spatial_externe
+:Référentiel_spatial_externe rdf:type owl:Class ;
+                             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :EstProduitPar ;
+                                                   owl:someValuesFrom :Externalisation
+                                                 ] ;
+                             rdfs:subClassOf :Production ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty :EstProduitPar ;
+                                               owl:someValuesFrom :Externalisation
+                                             ] ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty :EstUtiliséPourProduirePar ;
+                                               owl:someValuesFrom :Segmentation
+                                             ] ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty :EstProduitPar ;
+                                               owl:allValuesFrom :Externalisation
+                                             ] ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty :EstUtiliséPourProduirePar ;
+                                               owl:allValuesFrom :Segmentation
+                                             ] ;
+                             owl:disjointWith :Segmentation ,
+                                              :Signifiant ,
+                                              :Sémantisation ,
+                                              :UnionFiguréCartographie ,
+                                              :UnionObjetBaseDonnée ,
+                                              :UnionSignifiant .
 
 
-###  http://purl.org/MMO#RSI
-:RSI rdf:type owl:Class .
+###  http://purl.org/MMO#Référentiel_spatial_interne
+:Référentiel_spatial_interne rdf:type owl:Class .
 
 
 ###  http://purl.org/MMO#Segmentation
@@ -580,7 +580,7 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty :ProduitAPartirDe ;
-                                owl:someValuesFrom :RSE
+                                owl:someValuesFrom :Référentiel_spatial_externe
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty :Produit ;
@@ -588,7 +588,7 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty :ProduitAPartirDe ;
-                                owl:allValuesFrom :RSE
+                                owl:allValuesFrom :Référentiel_spatial_externe
                               ] ;
               owl:disjointWith :Signifiant ,
                                :UnionFiguréCartographie ,
@@ -794,7 +794,7 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
 ###  http://purl.org/MMO#Carte_bb11
 :Carte_bb11 rdf:type owl:NamedIndividual ,
                      :Carte ,
-                     :RSE ;
+                     :Référentiel_spatial_externe ;
             :AboutiÀ :géon_1 ,
                      :géon_2 ,
                      :géon_3 ,
