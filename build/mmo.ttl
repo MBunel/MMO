@@ -14,7 +14,7 @@
                                                               "Description en français"@fr ;
                        <http://purl.org/dc/terms/issued> "not yet"^^xsd:string ;
                        <http://purl.org/dc/terms/license> <http://cecill.info/licences/Licence_CeCILL_V2.1-en.html> ;
-                       <http://purl.org/dc/terms/modified> "2021-04-20"^^xsd:string ;
+                       <http://purl.org/dc/terms/modified> "2021-06-01"^^xsd:string ;
                        <http://purl.org/dc/terms/publisher> <https://anr.fr/Projet-ANR-19-CE38-0003> ;
                        <http://purl.org/dc/terms/rights> "ANR CORES 2021"^^xsd:string ;
                        <http://purl.org/dc/terms/title> "Mental Map Ontology"@en ,
@@ -36,13 +36,6 @@
                   rdfs:domain :Carte .
 
 
-###  http://purl.org/dc/terms/creator
-<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty ;
-                                   rdfs:range <http://xmlns.com/foaf/0.1/Agent> ;
-                                   rdfs:domain :Processus ,
-                                               :Production .
-
-
 ###  http://www.w3.org/2002/07/owl#minQualifiedCardinality
 owl:minQualifiedCardinality rdf:type owl:AnnotationProperty .
 
@@ -60,6 +53,11 @@ owl:minQualifiedCardinality rdf:type owl:AnnotationProperty .
          owl:propertyChainAxiom ( :EstUtiliséPourProduirePar
                                   :Produit
                                 ) .
+
+
+###  http://purl.org/MMO#Auteur
+:Auteur rdf:type owl:ObjectProperty ;
+        rdfs:range <http://xmlns.com/foaf/0.1/Agent> .
 
 
 ###  http://purl.org/MMO#Compose
@@ -185,6 +183,16 @@ owl:minQualifiedCardinality rdf:type owl:AnnotationProperty .
 
 
 #################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.org/MMO#Identifiant_carte_cores
+:Identifiant_carte_cores rdf:type owl:DatatypeProperty ;
+                         rdfs:domain :Carte ;
+                         rdfs:range rdfs:Literal .
+
+
+#################################################################
 #    Classes
 #################################################################
 
@@ -204,6 +212,7 @@ owl:minQualifiedCardinality rdf:type owl:AnnotationProperty .
                            ] ;
        rdfs:subClassOf :Production ;
        owl:disjointWith :Cartographie ,
+                        :Expérience ,
                         :Externalisation ,
                         :FiguréCartographique ,
                         :ObjetBaseDonnée ,
@@ -226,6 +235,7 @@ owl:minQualifiedCardinality rdf:type owl:AnnotationProperty .
                                    :CartePerceptive ,
                                    :CarteSensible ,
                                    :Cartographie ,
+                                   :Expérience ,
                                    :Externalisation ,
                                    :FiguréCartographique ,
                                    :ObjetBaseDonnée ,
@@ -245,6 +255,7 @@ NB : à changer. Les cartes \"eulidiennes\" peuvent utiliser une représentation
 :CarteMentale rdf:type owl:Class ;
               rdfs:subClassOf :Carte ;
               owl:disjointWith :Cartographie ,
+                               :Expérience ,
                                :Externalisation ,
                                :FiguréCartographique ,
                                :ObjetBaseDonnée ,
@@ -261,6 +272,7 @@ NB : à changer. Les cartes \"eulidiennes\" peuvent utiliser une représentation
 :CartePerceptive rdf:type owl:Class ;
                  rdfs:subClassOf :CarteMentale ;
                  owl:disjointWith :Cartographie ,
+                                  :Expérience ,
                                   :Externalisation ,
                                   :FiguréCartographique ,
                                   :ObjetBaseDonnée ,
@@ -277,6 +289,7 @@ NB : à changer. Les cartes \"eulidiennes\" peuvent utiliser une représentation
 :CarteSensible rdf:type owl:Class ;
                rdfs:subClassOf :CartePerceptive ;
                owl:disjointWith :Cartographie ,
+                                :Expérience ,
                                 :Externalisation ,
                                 :FiguréCartographique ,
                                 :ObjetBaseDonnée ,
@@ -309,7 +322,7 @@ NB : à changer. Les cartes \"eulidiennes\" peuvent utiliser une représentation
                                :ObjetSpatial ,
                                :Objet_géographique ,
                                :Production ,
-                               :RSE ,
+                               :Référentiel_spatial_externe ,
                                :Signifiant ,
                                :UnionFiguréCartographie ,
                                :UnionObjetBaseDonnée ,
@@ -317,35 +330,51 @@ NB : à changer. Les cartes \"eulidiennes\" peuvent utiliser une représentation
                                :segmentation_output .
 
 
+###  http://purl.org/MMO#Expérience
+:Expérience rdf:type owl:Class ;
+            rdfs:subClassOf :Processus ;
+            owl:disjointWith :FiguréCartographique ,
+                             :ObjetBaseDonnée ,
+                             :ObjetSpatial ,
+                             :Objet_géographique ,
+                             :Production ,
+                             :Référentiel_spatial_externe ,
+                             :Signifiant ,
+                             :UnionFiguréCartographie ,
+                             :UnionObjetBaseDonnée ,
+                             :UnionSignifiant ,
+                             :segmentation_output .
+
+
 ###  http://purl.org/MMO#Externalisation
 :Externalisation rdf:type owl:Class ;
                  owl:equivalentClass [ rdf:type owl:Restriction ;
                                        owl:onProperty :Produit ;
-                                       owl:someValuesFrom :RSE
+                                       owl:someValuesFrom :Référentiel_spatial_externe
                                      ] ;
                  rdfs:subClassOf :Processus ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty :Produit ;
-                                   owl:someValuesFrom :RSE
+                                   owl:someValuesFrom :Référentiel_spatial_externe
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty :ProduitAPartirDe ;
-                                   owl:someValuesFrom :RSI
+                                   owl:someValuesFrom :Référentiel_spatial_interne
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty :Produit ;
-                                   owl:allValuesFrom :RSE
+                                   owl:allValuesFrom :Référentiel_spatial_externe
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty :ProduitAPartirDe ;
-                                   owl:allValuesFrom :RSI
+                                   owl:allValuesFrom :Référentiel_spatial_interne
                                  ] ;
                  owl:disjointWith :FiguréCartographique ,
                                   :ObjetBaseDonnée ,
                                   :ObjetSpatial ,
                                   :Objet_géographique ,
                                   :Production ,
-                                  :RSE ,
+                                  :Référentiel_spatial_externe ,
                                   :Signifiant ,
                                   :UnionFiguréCartographie ,
                                   :UnionObjetBaseDonnée ,
@@ -361,7 +390,7 @@ NB : à changer. Les cartes \"eulidiennes\" peuvent utiliser une représentation
                                        :Objet_géographique ,
                                        :Processus ,
                                        :Production ,
-                                       :RSE ,
+                                       :Référentiel_spatial_externe ,
                                        :Segmentation ,
                                        :Signifié ,
                                        :Sémantisation ,
@@ -381,7 +410,7 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
                  owl:disjointWith :Objet_géographique ,
                                   :Processus ,
                                   :Production ,
-                                  :RSE ,
+                                  :Référentiel_spatial_externe ,
                                   :Segmentation ,
                                   :Signifié ,
                                   :Sémantisation ,
@@ -441,7 +470,7 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
                              owl:allValuesFrom :Production
                            ] ;
            owl:disjointWith :Production ,
-                            :RSE ,
+                            :Référentiel_spatial_externe ,
                             :Signifiant ,
                             :UnionFiguréCartographie ,
                             :UnionObjetBaseDonnée ,
@@ -471,39 +500,39 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
                              :UnionSignifiant .
 
 
-###  http://purl.org/MMO#RSE
-:RSE rdf:type owl:Class ;
-     owl:equivalentClass [ rdf:type owl:Restriction ;
-                           owl:onProperty :EstProduitPar ;
-                           owl:someValuesFrom :Externalisation
-                         ] ;
-     rdfs:subClassOf :Production ,
-                     [ rdf:type owl:Restriction ;
-                       owl:onProperty :EstProduitPar ;
-                       owl:someValuesFrom :Externalisation
-                     ] ,
-                     [ rdf:type owl:Restriction ;
-                       owl:onProperty :EstUtiliséPourProduirePar ;
-                       owl:someValuesFrom :Segmentation
-                     ] ,
-                     [ rdf:type owl:Restriction ;
-                       owl:onProperty :EstProduitPar ;
-                       owl:allValuesFrom :Externalisation
-                     ] ,
-                     [ rdf:type owl:Restriction ;
-                       owl:onProperty :EstUtiliséPourProduirePar ;
-                       owl:allValuesFrom :Segmentation
-                     ] ;
-     owl:disjointWith :Segmentation ,
-                      :Signifiant ,
-                      :Sémantisation ,
-                      :UnionFiguréCartographie ,
-                      :UnionObjetBaseDonnée ,
-                      :UnionSignifiant .
+###  http://purl.org/MMO#Référentiel_spatial_externe
+:Référentiel_spatial_externe rdf:type owl:Class ;
+                             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :EstProduitPar ;
+                                                   owl:someValuesFrom :Externalisation
+                                                 ] ;
+                             rdfs:subClassOf :Production ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty :EstProduitPar ;
+                                               owl:someValuesFrom :Externalisation
+                                             ] ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty :EstUtiliséPourProduirePar ;
+                                               owl:someValuesFrom :Segmentation
+                                             ] ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty :EstProduitPar ;
+                                               owl:allValuesFrom :Externalisation
+                                             ] ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty :EstUtiliséPourProduirePar ;
+                                               owl:allValuesFrom :Segmentation
+                                             ] ;
+                             owl:disjointWith :Segmentation ,
+                                              :Signifiant ,
+                                              :Sémantisation ,
+                                              :UnionFiguréCartographie ,
+                                              :UnionObjetBaseDonnée ,
+                                              :UnionSignifiant .
 
 
-###  http://purl.org/MMO#RSI
-:RSI rdf:type owl:Class .
+###  http://purl.org/MMO#Référentiel_spatial_interne
+:Référentiel_spatial_interne rdf:type owl:Class .
 
 
 ###  http://purl.org/MMO#Segmentation
@@ -519,7 +548,7 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty :ProduitAPartirDe ;
-                                owl:someValuesFrom :RSE
+                                owl:someValuesFrom :Référentiel_spatial_externe
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty :Produit ;
@@ -527,7 +556,7 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty :ProduitAPartirDe ;
-                                owl:allValuesFrom :RSE
+                                owl:allValuesFrom :Référentiel_spatial_externe
                               ] ;
               owl:disjointWith :Signifiant ,
                                :UnionFiguréCartographie ,
@@ -716,6 +745,16 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
 <http://xmlns.com/foaf/0.1/Agent> rdf:type owl:Class .
 
 
+###  http://xmlns.com/foaf/0.1/Group
+<http://xmlns.com/foaf/0.1/Group> rdf:type owl:Class ;
+                                  rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+<http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class ;
+                                   rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> .
+
+
 #################################################################
 #    Individuals
 #################################################################
@@ -723,14 +762,17 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
 ###  http://purl.org/MMO#Carte_bb11
 :Carte_bb11 rdf:type owl:NamedIndividual ,
                      :Carte ,
-                     :RSE ;
+                     :Référentiel_spatial_externe ;
             :AboutiÀ :géon_1 ,
                      :géon_2 ,
                      :géon_3 ,
                      :géon_4 ,
                      :segment_1 ;
+            :Auteur :personne_1 ,
+                    :personne_2 ;
             :EstUtiliséPourProduirePar :Segmentation ,
-                                       :Segmentation_2 .
+                                       :Segmentation_2 ;
+            :Identifiant_carte_cores "AA-01" .
 
 
 ###  http://purl.org/MMO#Dessin_Batiment_3
@@ -990,6 +1032,16 @@ Ainsi les flêches, légende, etc. ne sont pas des figurés cartographiques, don
                  :segmentation_output ;
         :EstProduitPar :Segmentation_2 ;
         :IssuDe :Carte_bb11 .
+
+
+###  http://purl.org/MMO#personne_1
+:personne_1 rdf:type owl:NamedIndividual ,
+                     <http://xmlns.com/foaf/0.1/Agent> .
+
+
+###  http://purl.org/MMO#personne_2
+:personne_2 rdf:type owl:NamedIndividual ,
+                     <http://xmlns.com/foaf/0.1/Agent> .
 
 
 ###  http://purl.org/MMO#segment_1
